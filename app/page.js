@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Dosis, Anton, Montserrat_Alternates } from "next/font/google";
 import Container from "./components/Container";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
+import TrendingComponent from "./TrendingComponents/TrendingComponent";
+import NewLaunch from "./NewLaunch/page";
 
 const dosis = Dosis({
   weight: "500",
@@ -18,7 +21,15 @@ const montserrat = Montserrat_Alternates({
   subsets: ["vietnamese"],
 });
 
-export default function Home() {
+let category = [
+  { label: "Earbud", image: "/Earbud.jpg" },
+  { label: "Speaker", image: "/Speaker.jpg" },
+  { label: "Wireless", image: "/Neckband.webp" },
+  { label: "SmartWatch", image: "/SmartWatch.jpg" },
+  { label: "Neckband", image: "/Headphone.jpg" },
+];
+
+export default async function Home() {
   return (
     <main>
       <Image
@@ -37,40 +48,70 @@ export default function Home() {
         </h1>
       </div>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="">
-            <h1
-              className={`${anton.className} md:mt-40 mt-20 text-4xl md:text-6xl flex justify-center`}>
-              UNLOCK THE FULL OF THE AUDIO
-            </h1>
-            <p
-              className={`${montserrat.className} md:mt-20 mt-14 text-sm md:leading-10 md:text-xl leading-7 text-center flex justify-center  `}>
-              {" "}
-              Our commitment to delivering unparalleled sound quality, ergonomic
-              design, and cutting-edge technology has made us the preferred
-              choice for audiophiles and music enthusiasts worldwide. With Us,
-              you don't just listen to music; you experience it, as every note
-              and beat comes to life in breathtaking clarity.
-            </p>
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="">
+              <h1
+                className={`${anton.className} md:mt-40 mt-20 text-4xl md:text-6xl flex justify-center`}>
+                UNLOCK THE FULL OF THE AUDIO
+              </h1>
+              <p
+                className={`${montserrat.className} md:mt-20 mt-14 text-sm md:leading-10 md:text-xl leading-7 text-center flex justify-center  `}>
+                {" "}
+                <Balancer ratio={1}>
+                  Our commitment to delivering unparalleled sound quality,
+                  ergonomic design, and cutting-edge technology has made us the
+                  preferred choice for audiophiles and music enthusiasts
+                  worldwide. With Us, you don't just listen to music; you
+                  experience it, as every note and beat comes to life in
+                  breathtaking clarity.
+                </Balancer>
+              </p>
+              <div className="flex justify-center">
+                <Link
+                  href="/collection"
+                  className="bg-black mt-4 text-white p-5 md:px-32 px-16 rounded-lg">
+                  Buy Now
+                </Link>
+              </div>
+            </div>
             <div className="flex justify-center">
-              <Link
-                href="#"
-                className="bg-black mt-4 text-white p-5 md:px-32 px-16 rounded-lg">
-                Buy Now
-              </Link>
+              <Image
+                src="/head.jpg"
+                width={500}
+                height={500}
+                alt="The Hero Image"
+                className=" h-[70vh] md:h-[90vh] md:w-[80vh] rounded-xl w-[100vh] mt-7 md:mt-8"
+              />
             </div>
           </div>
-          <div className="flex justify-center">
-            <Image
-              src="/head.jpg"
-              width={500}
-              height={500}
-              alt="The Hero Image"
-              className=" h-[70vh] md:h-[90vh] md:w-[80vh] rounded-xl w-[100vh] mt-7 md:mt-8"
-            />
+          <div
+            className={`${anton.className} flex justify-center text-4xl md:text-6xl mt-7 md:mt-16`}>
+            SHOP BY CATEGORY
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-5 mt-10 gap-4 ">
+            {category.map((e) => {
+              return (
+                <div key={e.label}>
+                  <div className="flex justify-center">
+                    <Image
+                      src={e.image}
+                      width={500}
+                      height={500}
+                      alt={e.label}
+                      className="rounded-xl  h-[254px] w-[304px] hover:scale-110 transition-all ease-in"
+                    />
+                  </div>
+
+                  <p className="flex justify-center mt-2 text-lg">{e.label}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Container>
+      <TrendingComponent />
+      <NewLaunch />
     </main>
   );
 }
