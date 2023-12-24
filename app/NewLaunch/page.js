@@ -33,7 +33,7 @@ export default async function NewLaunch() {
                     alt={e.name}
                     className="flex justify-center p-14 hover:scale-125 transition-all ease-in"
                   />{" "}
-                  {/* <p>{e.name}</p> */}
+                  <p>{e.name}</p>
                 </div>
               );
             })}

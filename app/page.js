@@ -34,8 +34,9 @@ export default async function Home() {
     <main>
       <Image
         src="/HeroImg.jpg"
-        width={50000}
-        height={50000}
+        width={500}
+        height={500}
+        priority={true}
         alt="The Hero Image"
         className="h-[80vh] md:h-[100vh] w-[300vh] mt-2 md:mt-8"
       />
