@@ -5,6 +5,5 @@ export async function CONNECT_MONGO_DB() {
     return mongoose.connection.asPromise();
   } else {
     return await mongoose.connect(process.env.MONGO_DB_URI);
-    console.log("connection established");
   }
 }
