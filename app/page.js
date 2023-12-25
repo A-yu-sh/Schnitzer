@@ -111,8 +111,9 @@ export default async function Home() {
           </div>
         </div>
       </Container>
-      <TrendingComponent />
-      <NewLaunch />
+      {/* <TrendingComponent /> */}
+
+      {/* <NewLaunch /> */}
     </main>
   );
 }

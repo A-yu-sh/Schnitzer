@@ -1,27 +1,48 @@
 import React from "react";
 import Container from "../components/Container";
+import { Anton } from "next/font/google";
+import Cards from "../components/Cards";
+import InputHandler from "./InputHandler";
 
+// The Font For the Heading
+const anton = Anton({
+  weight: "400",
+  subsets: ["vietnamese"],
+
+  // The Function to Get All the Product
+});
+const FETCHER = async () => {
+  const res = await fetch("http://localhost:3000/api/Database", {
+    cache: "force-cache",
+  });
+  const data = await res.json();
+  return data;
+};
 const page = async () => {
-  const GETDATA = async () => {
-    const data = await fetch(`${process.env.URL}/api/Database`);
-    const res = data.json();
-    return res;
-  };
-  const data = await GETDATA();
+  const product = await FETCHER();
 
   return (
     <Container>
-      <div>
-        <div>Our Collection</div>
-        <div className="grid grid-cols-1 md:grid-cols-4">
-          {data.map((e) => {
-            return (
-              <div>
-                <div>{e.name}</div>
-              </div>
-            );
-          })}
-        </div>
+      <div className={`${anton.className} mt-20 flex justify-center  text-4xl`}>
+        OUR COLLECTION
+      </div>
+
+      <InputHandler />
+
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        {product.map((e) => {
+          return (
+            <div key={e._id} className="flex justify-center">
+              <Cards
+                id={e._id}
+                Category={e.category}
+                name={e.name}
+                img={e.image}
+                Price={e.price}
+              />
+            </div>
+          );
+        })}
       </div>
     </Container>
   );

@@ -1,6 +1,7 @@
 import { GET_TRENDING_DATA } from "../api/Operations/route";
 import { Anton } from "next/font/google";
 import Image from "next/image";
+import Cards from "../components/Cards";
 
 const anton = Anton({
   weight: "400",
@@ -20,14 +21,13 @@ export default async function TrendingComponent() {
           data.map((e) => {
             return (
               <div key={e._id} className="flex m-20">
-                <Image
-                  src={e.image}
-                  width={500}
-                  height={500}
-                  alt={e.name}
-                  className="flex"
-                />{" "}
-                <p>{e.name}</p>
+                <Cards
+                  id={e._id}
+                  Category={e.category}
+                  name={e.name}
+                  img={e.image}
+                  Price={e.price}
+                />
               </div>
             );
           })}
