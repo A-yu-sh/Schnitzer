@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Metrophobic, Quicksand } from "next/font/google";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
+
 const metrophobic = Metrophobic({
   weight: "400",
   subsets: ["latin"],
@@ -25,7 +26,7 @@ const Cards = ({ id, name, img, Price, Category }) => {
               src={img}
               width={50}
               height={50}
-              alt={name}
+              alt={`image of ${name}`}
               className="flex justify-center bg-stone-100 rounded-lg  transition-all hover:scale-105 ease-in h-[15rem] w-[13rem] p-20"
             />
           </div>

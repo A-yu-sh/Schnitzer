@@ -5,6 +5,7 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import TrendingComponent from "./TrendingComponents/TrendingComponent";
 import NewLaunch from "./NewLaunch/page";
+import { ShopCategory } from "./ShopCategory/page";
 
 const dosis = Dosis({
   weight: "500",
@@ -21,17 +22,9 @@ const montserrat = Montserrat_Alternates({
   subsets: ["vietnamese"],
 });
 
-let category = [
-  { label: "Earbud", image: "/Earbud.jpg" },
-  { label: "Speaker", image: "/Speaker.jpg" },
-  { label: "Wireless", image: "/Neckband.webp" },
-  { label: "SmartWatch", image: "/SmartWatch.jpg" },
-  { label: "Neckband", image: "/Headphone.jpg" },
-];
-
 export default async function Home() {
   return (
-    <main>
+    <main className="">
       <Image
         src="/HeroImg.jpg"
         width={500}
@@ -86,34 +79,12 @@ export default async function Home() {
               />
             </div>
           </div>
-          <div
-            className={`${anton.className} flex justify-center text-4xl md:text-6xl mt-7 md:mt-16`}>
-            SHOP BY CATEGORY
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 mt-10 gap-4 ">
-            {category.map((e) => {
-              return (
-                <div key={e.label}>
-                  <div className="flex justify-center">
-                    <Image
-                      src={e.image}
-                      width={500}
-                      height={500}
-                      alt={e.label}
-                      className="rounded-xl  h-[254px] w-[304px] hover:scale-110 transition-all ease-in"
-                    />
-                  </div>
-
-                  <p className="flex justify-center mt-2 text-lg">{e.label}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        </div>{" "}
+        <ShopCategory />
       </Container>
-      {/* <TrendingComponent /> */}
 
       {/* <NewLaunch /> */}
+      {/* <TrendingComponent /> */}
     </main>
   );
 }

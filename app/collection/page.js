@@ -23,7 +23,7 @@ const page = async () => {
 
   return (
     <Container>
-      <div className={`${anton.className} mt-20 flex justify-center  text-4xl`}>
+      <div className={`${anton.className} mt-20 flex justify-center  text-7xl`}>
         OUR COLLECTION
       </div>
 
