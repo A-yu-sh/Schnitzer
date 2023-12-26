@@ -1,6 +1,7 @@
 import { CONNECT_MONGO_DB } from "@/libs/ConnectMongoDB";
 import PRODUCT_MODEL from "@/model/ProductModel";
 import { NextResponse } from "next/server";
+import { cache } from "react";
 
 export async function GET_TRENDING_DATA() {
   await CONNECT_MONGO_DB();
@@ -22,10 +23,10 @@ export async function GET_DATA_BY_ID(id) {
   return res;
 }
 
-export async function GET_DATA_BY_CATEGORY(Category) {
+export const GET_DATA_BY_CATEGORY = cache(async (Category) => {
   await CONNECT_MONGO_DB();
   const res = PRODUCT_MODEL.aggregate([
     { $match: { category: `${Category}` } },
   ]);
   return res;
-}
+});
