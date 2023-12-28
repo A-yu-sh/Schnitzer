@@ -3,23 +3,41 @@ import Container from "../components/Container";
 import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
 import InputHandler from "./InputHandler";
+import { Redis } from "ioredis";
+
+const CLI = new Redis();
 
 // The Font For the Heading
 const anton = Anton({
   weight: "400",
   subsets: ["vietnamese"],
-
-  // The Function to Get All the Product
 });
+
+// The REDIS CLIENT
+
+// The Function to Get All the Product
+
 const FETCHER = async () => {
-  const res = await fetch("http://localhost:3000/api/Database", {
-    cache: "force-cache",
-  });
-  const data = await res.json();
-  return data;
+  const CachedValue = await CLI.get("Collection_Products");
+  if (CachedValue) {
+    const ReturnData = JSON.parse(CachedValue);
+    return ReturnData;
+  } else {
+    const res = await fetch("http://localhost:3000/api/Database", {
+      cache: "no-store",
+    });
+    const data = await res.json();
+    await CLI.set("Collection_Products", JSON.stringify(data));
+    CLI.expire("Collection_Products", 600);
+    return data;
+  }
+
+  // const dt = JSON.parse(data);
+  // const dt = JSON.stringify(data);
 };
 const page = async () => {
   const product = await FETCHER();
+  console.log("product ==>", product);
 
   return (
     <Container>

@@ -23,10 +23,11 @@ export async function GET_DATA_BY_ID(id) {
   return res;
 }
 
-export const GET_DATA_BY_CATEGORY = cache(async (Category) => {
+export const GET_DATA_BY_CATEGORY = async (Category) => {
   await CONNECT_MONGO_DB();
   const res = PRODUCT_MODEL.aggregate([
     { $match: { category: `${Category}` } },
   ]);
   return res;
-});
+  // console.log("hello");
+};
