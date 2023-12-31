@@ -2,8 +2,16 @@ import { CONNECT_MONGO_DB } from "@/libs/ConnectMongoDB";
 import PRODUCT_MODEL from "@/model/ProductModel";
 import { NextResponse } from "next/server";
 import { Redis } from "ioredis";
+import UserMODEL from "@/model/UserModel";
 
 const CLI = new Redis();
+
+export async function POST(req, res) {
+  const { name, email, provider } = await req.json();
+  await CONNECT_MONGO_DB();
+  await UserMODEL.create({ name, email, provider });
+  return NextResponse.json({ message: "created" });
+}
 
 export async function GET(request, response) {
   await CONNECT_MONGO_DB();

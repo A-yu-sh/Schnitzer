@@ -22,7 +22,7 @@ export async function ShopCategory() {
         className={`${anton.className} flex justify-center text-4xl md:text-6xl mt-7 md:mt-16`}>
         SHOP BY CATEGORY
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-5 mt-10 gap-4 ">
+      <div className="grid grid-cols-2 md:grid-cols-5 mt-10 gap-4 ">
         {category.map((e) => {
           return (
             <div key={e.label}>

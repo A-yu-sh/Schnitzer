@@ -37,30 +37,32 @@ const FETCHER = async () => {
 };
 const page = async () => {
   const product = await FETCHER();
-  console.log("product ==>", product);
 
   return (
     <Container>
-      <div className={`${anton.className} mt-20 flex justify-center  text-7xl`}>
-        OUR COLLECTION
-      </div>
+      <div>
+        <div
+          className={`${anton.className} mt-20 flex justify-center  text-4xl md:text-7xl`}>
+          OUR COLLECTION
+        </div>
 
-      <InputHandler />
+        {/* <InputHandler /> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {product.map((e) => {
-          return (
-            <div key={e._id} className="flex justify-center">
-              <Cards
-                id={e._id}
-                Category={e.category}
-                name={e.name}
-                img={e.image}
-                Price={e.price}
-              />
-            </div>
-          );
-        })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
+          {product.map((e) => {
+            return (
+              <div key={e._id} className="flex justify-center">
+                <Cards
+                  id={e._id}
+                  Category={e.category}
+                  name={e.name}
+                  img={e.image}
+                  Price={e.price}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Container>
   );

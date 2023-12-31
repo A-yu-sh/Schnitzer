@@ -27,8 +27,8 @@ export default async function Home() {
     <main className="">
       <Image
         src="/HeroImg.jpg"
-        width={500}
-        height={500}
+        width={2000}
+        height={2000}
         priority={true}
         alt="The Hero Image"
         className="h-[80vh] md:h-[100vh] w-[300vh] mt-2 md:mt-8"
@@ -82,7 +82,6 @@ export default async function Home() {
         </div>{" "}
         <ShopCategory />
       </Container>
-
       {/* <NewLaunch /> */}
       {/* <TrendingComponent /> */}
     </main>
