@@ -1,13 +1,15 @@
 "use client";
-import { getTotal, removeFromCart } from "@/Redux/CartSlice";
+import { removeFromCart } from "@/Redux/CartSlice";
 import { Lato, Roboto } from "next/font/google";
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import QuantityCounter from "./QuantityCounter";
 import Image from "next/image";
 import Container from "../components/Container";
 import { GrClose } from "react-icons/gr";
 import CartTotalAmount from "./CartTotalAmount";
+import Link from "next/link";
+import { FaHeadphonesSimple } from "react-icons/fa6";
 
 const roboto = Roboto({
   weight: "400",
@@ -21,11 +23,6 @@ const lato = Lato({
 const page = () => {
   const dispatch = useDispatch();
   const Cart = useSelector((state) => state.cart.CART_PRODUCT);
-  // const { CART_AMOUNT } = useSelector((state) => state.cart);
-
-  // useEffect(() => {
-  //   dispatch(getTotal());
-  // }, [Cart, dispatch]);
 
   const Remove = (e) => {
     dispatch(removeFromCart(e));
@@ -34,6 +31,10 @@ const page = () => {
   return (
     <Container>
       <div>
+        <div className="flex justify-center text-4xl mt-10 font-bold">
+          <h1>SHOPPING CART</h1>
+          <hr />
+        </div>
         {Cart.length > 0 ? (
           <div className="grid grid-cols-1 ">
             <div>
@@ -41,7 +42,6 @@ const page = () => {
                 Cart.map((e) => {
                   return (
                     <div className="flex justify-center">
-                      <hr />
                       <section className="flex border-2 p-5 w-full md:w-1/2 border-gray-200 rounded-lg mt-10">
                         <div>
                           <Image
@@ -97,7 +97,26 @@ const page = () => {
             </div>
           </div>
         ) : (
-          <div></div>
+          <div className=" mt-52">
+            <div className="flex justify-center">
+              <FaHeadphonesSimple className="h-20 w-20" />
+            </div>
+            <div className="flex mt-5 justify-center">
+              <p className=" font-bold text-xl">Your Cart is Empty</p>
+            </div>
+            <div className="flex justify-center">
+              <p className="  text-sm text-gray-400">
+                Add some items to your cart
+              </p>
+            </div>
+            <div className="flex justify-center mt-5">
+              <Link
+                href="/collection"
+                className="bg-black  px-12 py-3 rounded-lg text-white">
+                Continue Shopping
+              </Link>
+            </div>
+          </div>
         )}
       </div>
     </Container>

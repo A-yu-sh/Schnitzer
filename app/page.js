@@ -82,6 +82,7 @@ export default async function Home() {
         </div>{" "}
         <ShopCategory />
       </Container>
+
       {/* <NewLaunch /> */}
       {/* <TrendingComponent /> */}
     </main>

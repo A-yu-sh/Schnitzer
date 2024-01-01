@@ -2,15 +2,12 @@
 import React, { useState } from "react";
 import { Pacifico } from "next/font/google";
 import { RxHamburgerMenu } from "react-icons/rx";
-import {
-  IoCloseOutline,
-  IoCartOutline,
-  IoPersonCircleOutline,
-} from "react-icons/io5";
+import { IoCloseOutline, IoPersonCircleOutline } from "react-icons/io5";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-// import { useSession, signIn, signOut, getSession } from "next-auth/react";
+import { PiShoppingBagThin } from "react-icons/pi";
 import Image from "next/image";
+import LoginButton from "./LoginButton";
 
 const pacifico = Pacifico({
   weight: "400",
@@ -18,11 +15,7 @@ const pacifico = Pacifico({
 });
 
 const Header = () => {
-  // const { data: session, status } = useSession();
   const [open, setOpen] = useState(false);
-  // console.log(status);
-  // console.log(cession);
-  // console.log(session);
 
   const Cart = useSelector((state) => state.cart.CART_PRODUCT);
 
@@ -58,13 +51,16 @@ const Header = () => {
           })}
         </div>
         <div className=" md:flex md:justify-center flex justify-end ">
-          <Link aria-label="cart" href="/Cart">
-            <IoCartOutline className="h-7 w-8 mt-6 md:mt-7 " />
+          <Link aria-label="cart" className="relative" href="/Cart">
+            <PiShoppingBagThin className="h-7 w-8 mt-6 md:mt-7 " />
+            <span className=" text-white h-[20px] w-[20px]  absolute left-5 top-[1.375rem] bg-black  px-1 rounded-2xl">
+              {Cart.length}
+            </span>
           </Link>
-
-          <Link aria-label="login" href="/login">
+          {/* <Link aria-label="login" href="/login">
             <IoPersonCircleOutline className="h-7 w-8 mt-6 ml-4 md:ml-14 md:mt-7 text-black" />
-          </Link>
+          </Link> */}{" "}
+          <LoginButton />
         </div>
         <div
           onClick={() => setOpen(!open)}

@@ -28,6 +28,7 @@ const Cards = ({ id, name, img, Price, Category }) => {
                 src={img}
                 width={150}
                 height={150}
+                priority={true}
                 alt={`image of ${name}`}
                 className="flex justify-center bg-stone-100 rounded-lg  transition-all hover:scale-105 ease-in h-[15rem] w-[18rem] p-20"
               />

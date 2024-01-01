@@ -12,7 +12,7 @@ const Button = ({ data }) => {
   const HandleClick = (data) => {
     dispatch(addToCart(data));
     setIsOpen(true);
-    setInterval(() => setIsOpen(false), 1500);
+    setInterval(() => setIsOpen(false), 1300);
   };
 
   return (
