@@ -40,7 +40,7 @@ const Cards = ({ id, name, img, Price, Category }) => {
             </p>
             <p
               className={`${quicksand.className} font-bold text-xl mt-2 ml-7 max-w-[12ch]`}>
-              ₹{Price}
+              ${Price}
             </p>
           </div>
 

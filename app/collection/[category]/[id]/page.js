@@ -64,7 +64,7 @@ const page = async ({ params }) => {
             </div>
             <div
               className={`${mitr.className} flex justify-center md:justify-start text-4xl mt-5 `}>
-              ₹{data.price}{" "}
+              ${data.price}{" "}
             </div>
             <div
               className={`${metrophobic.className}  mt-3 leading-7 text-gray-500`}>

@@ -6,6 +6,7 @@ import { IoCloseOutline, IoPersonCircleOutline } from "react-icons/io5";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { PiShoppingBagThin } from "react-icons/pi";
+
 import Image from "next/image";
 import LoginButton from "./LoginButton";
 
@@ -52,14 +53,12 @@ const Header = () => {
         </div>
         <div className=" md:flex md:justify-center flex justify-end ">
           <Link aria-label="cart" className="relative" href="/Cart">
-            <PiShoppingBagThin className="h-7 w-8 mt-6 md:mt-7 " />
-            <span className=" text-white h-[20px] w-[20px]  absolute left-5 top-[1.375rem] bg-black  px-1 rounded-2xl">
-              {Cart.length}
+            <PiShoppingBagThin className="h-12 w-14 mt-6 md:mt-5 " />
+            <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem]    rounded-2xl">
+              <span className="flex justify-center">{Cart.length}</span>
             </span>
           </Link>
-          {/* <Link aria-label="login" href="/login">
-            <IoPersonCircleOutline className="h-7 w-8 mt-6 ml-4 md:ml-14 md:mt-7 text-black" />
-          </Link> */}{" "}
+
           <LoginButton />
         </div>
         <div

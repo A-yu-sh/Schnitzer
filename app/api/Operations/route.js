@@ -1,5 +1,6 @@
 import { CONNECT_MONGO_DB } from "@/libs/ConnectMongoDB";
 import PRODUCT_MODEL from "@/model/ProductModel";
+import UserMODEL from "@/model/UserModel";
 import { Redis } from "ioredis";
 
 const CLI = new Redis();
@@ -38,8 +39,13 @@ export const GET_DATA_BY_CATEGORY = async (Category) => {
     { $match: { category: `${Category}` } },
   ]);
   return res;
-  // console.log("hello");
 };
+
+// export async function POST_ARRAY(data) {
+//   await CONNECT_MONGO_DB();
+//   const dt = await UserMODEL.updateOne(data);
+//   return dt;
+// }
 
 // export async function GET(request, response) {
 //   await CONNECT_MONGO_DB();

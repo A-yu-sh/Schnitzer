@@ -10,6 +10,8 @@ import { GrClose } from "react-icons/gr";
 import CartTotalAmount from "./CartTotalAmount";
 import Link from "next/link";
 import { FaHeadphonesSimple } from "react-icons/fa6";
+import { loadStripe } from "@stripe/stripe-js";
+import { CheckOutOrder } from "@/lib/CheckoutOrder";
 
 const roboto = Roboto({
   weight: "400",
@@ -22,12 +24,35 @@ const lato = Lato({
 });
 const page = () => {
   const dispatch = useDispatch();
+
   const Cart = useSelector((state) => state.cart.CART_PRODUCT);
+
+  // Make sure to call `loadStripe` outside of a component’s render to avoid
+  // recreating the `Stripe` object on every render.
+  loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+
+  React.useEffect(() => {
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+    if (query.get("success")) {
+      console.log("Order placed! You will receive an email confirmation.");
+    }
+
+    if (query.get("canceled")) {
+      console.log(
+        "Order canceled -- continue to shop around and checkout when you’re ready."
+      );
+    }
+  }, []);
+
+  const checkout = async (dt) => {
+    await CheckOutOrder(dt);
+  };
 
   const Remove = (e) => {
     dispatch(removeFromCart(e));
   };
-  console.log(Cart);
+
   return (
     <Container>
       <div>
@@ -70,7 +95,7 @@ const page = () => {
                           <span
                             className={`${lato.className} flex leading-none text-primary-800 text-2xl font-bold`}>
                             {" "}
-                            ₹{e.price * e.Quantity}{" "}
+                            ${e.price * e.Quantity}{" "}
                             <span
                               className={`${roboto.className} text-sm text-gray-400 mt-1 ml-2`}>
                               {" "}
@@ -89,11 +114,14 @@ const page = () => {
                 <CartTotalAmount />
               </div>
               <div className="flex justify-center mt-7">
-                <button className=" bg-black text-white px-20 py-5 rounded-lg">
+                <button
+                  onClick={() => checkout(Cart)}
+                  className=" bg-black text-white px-20 py-5 rounded-lg">
                   {" "}
-                  Checkout
+                  Proceed To Checkout
                 </button>
-              </div>
+                {/* <CheckOutButton /> */}
+              </div>{" "}
             </div>
           </div>
         ) : (

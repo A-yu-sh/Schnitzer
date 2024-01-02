@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { IoClose } from "react-icons/io5";
 import { BsBagCheckFill } from "react-icons/bs";
+// import { POST_ARRAY } from "../api/Operations/route";
 
 const Button = ({ data }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
-  const HandleClick = (data) => {
+  const HandleClick = async (data) => {
     dispatch(addToCart(data));
     setIsOpen(true);
     setInterval(() => setIsOpen(false), 1300);
