@@ -4,10 +4,16 @@ import { NextResponse } from "next/server";
 import { Redis } from "ioredis";
 import UserMODEL from "@/model/UserModel";
 
-Redis.createClient({
+// Redis.createClient({
+//   port: 6379,
+//   host: process.env.REDIS_HOST,
+// });
+
+const client = Redis.createClient({
+  host: "redis-stack", // Use the name of your Redis container
   port: 6379,
-  host: process.env.REDIS_HOST,
 });
+console.log(client);
 
 const CLI = new Redis();
 
