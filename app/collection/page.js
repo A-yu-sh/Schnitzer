@@ -5,7 +5,10 @@ import Cards from "../components/Cards";
 import { Redis } from "ioredis";
 import SearchBar from "./SearchBar";
 
-const CLI = new Redis();
+const CLI = new Redis({
+  host: "redis-stack", // Use the name of your Redis container
+  port: 6379,
+});
 
 // The Font For the Heading
 const anton = Anton({
