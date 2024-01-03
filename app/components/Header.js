@@ -36,7 +36,7 @@ const Header = () => {
         </div>
 
         <div
-          className={` md:flex md:justify-center md:space-x-7 md:pb-0 absolute md:static border-2 border-gray-200 md:border-none md:bg-white md:z-auto z-[auto] left-0 md:w-auto md:pl-0 pl-9 flex ml-[44%] sm:ml-[60%] md:ml-0 flex-col md:flex-row  w-[12rem]  rounded-lg p-7 leading-9 md:text-black text-black bg-white mt-[4.2rem] md:mt-0 transition-all ease-in-out ${
+          className={`md:flex md:justify-center md:space-x-7 md:pb-0 absolute md:static border-2 border-gray-200 md:border-none md:bg-white md:z-auto z-[auto] left-0 md:w-auto md:pl-0 pl-9 flex ml-[44%] sm:ml-[60%] md:ml-0 flex-col md:flex-row  w-[12rem]  rounded-lg p-7 leading-9 md:text-black text-black bg-white mt-[4.2rem] md:mt-0 transition-all ease-in-out ${
             open ? "top-[200]" : "top-[-1100px]"
           }
 `}>
@@ -53,8 +53,8 @@ const Header = () => {
         </div>
         <div className=" md:flex md:justify-center flex justify-end ">
           <Link aria-label="cart" className="relative" href="/Cart">
-            <PiShoppingBagThin className="h-12 w-14 mt-6 md:mt-5 " />
-            <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem]    rounded-2xl">
+            <PiShoppingBagThin className="h-12 w-14 md: ml-2 mt-3 md:mt-5 " />
+            <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem] md:ml-2   rounded-2xl">
               <span className="flex justify-center">{Cart.length}</span>
             </span>
           </Link>

@@ -19,9 +19,10 @@ export const authOptions = {
         const { provider } = account;
         await CONNECT_MONGO_DB();
         const IF_USER_EXIST = await UserMODEL.findOne({ email });
+
         if (!IF_USER_EXIST) {
           try {
-            const res = await fetch("http://localhost:3000/api/Database", {
+            const res = await fetch("http://localhost:3000/api/user", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

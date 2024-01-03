@@ -48,7 +48,7 @@ const page = async ({ params }) => {
               {Hr} Hours Playback with ENXM Technology
             </div>
             <div className="">
-              {STOCK > 0 ? (
+              {STOCK > 1 ? (
                 <div className="font-bold text-green-400 flex justify-center md:justify-start">
                   Available In Stock
                 </div>

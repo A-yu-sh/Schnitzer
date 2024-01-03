@@ -41,23 +41,8 @@ export const GET_DATA_BY_CATEGORY = async (Category) => {
   return res;
 };
 
-// export async function POST_ARRAY(data) {
-//   await CONNECT_MONGO_DB();
-//   const dt = await UserMODEL.updateOne(data);
-//   return dt;
-// }
-
-// export async function GET(request, response) {
-//   await CONNECT_MONGO_DB();
-//   const CachedValue = await CLI.get("Collection");
-
-//   if (CachedValue) {
-//     const ReturnData = JSON.parse(CachedValue);
-//     return NextResponse.json(ReturnData);
-//   } else {
-//     const res = await PRODUCT_MODEL.find();
-//     await CLI.set("Collection", JSON.stringify(res));
-//     CLI.expire("Collection", 600);
-//     return NextResponse.json(res);
-//   }
-// }
+export const GET_USER = async (id) => {
+  await CONNECT_MONGO_DB();
+  const res = UserMODEL.aggregate([{ $match: { _id: `${id}` } }]);
+  return res;
+};

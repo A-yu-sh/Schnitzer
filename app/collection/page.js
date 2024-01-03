@@ -2,13 +2,6 @@ import React from "react";
 import Container from "../components/Container";
 import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
-import { Redis } from "ioredis";
-import SearchBar from "./SearchBar";
-
-const CLI = new Redis({
-  host: "redis-stack", // Use the name of your Redis container
-  port: 6379,
-});
 
 // The Font For the Heading
 const anton = Anton({
@@ -21,23 +14,14 @@ const anton = Anton({
 // The Function to Get All the Product
 
 const FETCHER = async () => {
-  const CachedValue = await CLI.get("Collection_Products");
-  if (CachedValue) {
-    const ReturnData = JSON.parse(CachedValue);
-    return ReturnData;
-  } else {
-    const res = await fetch("http://localhost:3000/api/Database", {
-      cache: "no-store",
-    });
-    const data = await res.json();
-    await CLI.set("Collection_Products", JSON.stringify(data));
-    CLI.expire("Collection_Products", 600);
-    return data;
-  }
+  const res = await fetch("http://localhost:3000/api/Database", {
+    cache: "no-store",
+  });
+  const data = await res.json();
 
-  // const dt = JSON.parse(data);
-  // const dt = JSON.stringify(data);
+  return data;
 };
+
 const page = async () => {
   const product = await FETCHER();
 
@@ -48,8 +32,6 @@ const page = async () => {
           className={`${anton.className} mt-20 flex justify-center  text-4xl md:text-7xl`}>
           OUR COLLECTION
         </div>
-        {/* <SearchBar category={product.category} /> */}
-        {/* <InputHandler /> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
           {product.map((e) => {

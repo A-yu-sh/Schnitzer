@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 import Image from "next/image";
 import { MdLogout } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -39,7 +40,13 @@ const LoginButton = () => {
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <CgProfile />
-                <span className="ml-2">Profile</span>
+                <span className="ml-2">
+                  <Link
+                    href="/profile/[name]"
+                    as={`/profile/${session.user.name}`}>
+                    Profile
+                  </Link>
+                </span>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 {" "}
