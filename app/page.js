@@ -6,6 +6,7 @@ import Balancer from "react-wrap-balancer";
 import TrendingComponent from "./TrendingComponents/TrendingComponent";
 import NewLaunch from "./NewLaunch/page";
 import { ShopCategory } from "./ShopCategory/page";
+import Blogs from "./components/Blogs";
 
 const dosis = Dosis({
   weight: "500",
@@ -81,6 +82,7 @@ export default async function Home() {
           </div>
         </div>{" "}
         <ShopCategory />
+        <Blogs />
       </Container>
 
       {/* <NewLaunch /> */}
