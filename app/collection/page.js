@@ -2,8 +2,8 @@ import React from "react";
 import Container from "../components/Container";
 import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
-import InputHandler from "./InputHandler";
 import { Redis } from "ioredis";
+import SearchBar from "./SearchBar";
 
 const CLI = new Redis();
 
@@ -45,7 +45,7 @@ const page = async () => {
           className={`${anton.className} mt-20 flex justify-center  text-4xl md:text-7xl`}>
           OUR COLLECTION
         </div>
-
+        {/* <SearchBar category={product.category} /> */}
         {/* <InputHandler /> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">

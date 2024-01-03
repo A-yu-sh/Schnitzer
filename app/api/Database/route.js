@@ -4,6 +4,11 @@ import { NextResponse } from "next/server";
 import { Redis } from "ioredis";
 import UserMODEL from "@/model/UserModel";
 
+Redis.createClient({
+  port: 6379,
+  host: process.env.REDIS_HOST,
+});
+
 const CLI = new Redis();
 
 export async function POST(req, res) {

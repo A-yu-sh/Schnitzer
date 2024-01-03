@@ -11,7 +11,7 @@ import CartTotalAmount from "./CartTotalAmount";
 import Link from "next/link";
 import { FaHeadphonesSimple } from "react-icons/fa6";
 import { loadStripe } from "@stripe/stripe-js";
-import { CheckOutOrder } from "@/lib/CheckoutOrder";
+import { CheckOutOrder } from "@/libs/CheckoutOrder";
 
 const roboto = Roboto({
   weight: "400",
