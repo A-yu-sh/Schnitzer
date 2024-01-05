@@ -3,7 +3,7 @@ import PRODUCT_MODEL from "@/model/ProductModel";
 import UserMODEL from "@/model/UserModel";
 import { Redis } from "ioredis";
 
-const CLI = new Redis();
+const CLI = new Redis(6379);
 
 export async function GET_TRENDING_DATA() {
   await CONNECT_MONGO_DB();
