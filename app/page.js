@@ -3,7 +3,7 @@ import { Dosis, Anton, Montserrat_Alternates } from "next/font/google";
 import Container from "./components/Container";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
-import { ShopCategory } from "./ShopCategory/page";
+import { ShopCategory } from "../components/ShopCategory";
 import TwoColumnSection from "./components/TwoColumnSection";
 import StaticCards from "./components/StaticCards";
 
