@@ -2,7 +2,6 @@ import { CONNECT_MONGO_DB } from "@/libs/ConnectMongoDB";
 import PRODUCT_MODEL from "@/model/ProductModel";
 import { NextResponse } from "next/server";
 import { Redis } from "ioredis";
-import UserMODEL from "@/model/UserModel";
 
 const CLI = new Redis();
 
