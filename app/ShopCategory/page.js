@@ -1,7 +1,7 @@
 import { Anton } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
-import { GET_DATA_BY_CATEGORY } from "../api/Operations/route";
+
 const anton = Anton({
   weight: "400",
   subsets: ["vietnamese"],

@@ -1,5 +1,6 @@
 import React from "react";
 import { Pacifico } from "next/font/google";
+import ReactLoading from "react-loading";
 
 const pacifico = Pacifico({
   weight: "400",

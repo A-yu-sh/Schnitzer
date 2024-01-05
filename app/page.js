@@ -7,6 +7,9 @@ import { ShopCategory } from "./ShopCategory/page";
 import TwoColumnSection from "./components/TwoColumnSection";
 import StaticCards from "./components/StaticCards";
 
+// import TrendingData from "./components/TrendingCards";
+// import TrendingComponent from "./TrendingComponents/TrendingComponent";
+
 const dosis = Dosis({
   weight: "500",
   subsets: ["vietnamese"],
