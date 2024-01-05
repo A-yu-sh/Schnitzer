@@ -20,7 +20,8 @@ export async function ShopCategory() {
     <div>
       <div
         className={`${anton.className} flex justify-center text-4xl md:text-6xl mt-7 md:mt-16`}>
-        SHOP BY CATEGORY
+        <span className="text-rose-500 mr-3">Our</span> TOP SELLING{" "}
+        <span className="text-rose-500 ml-3">CATEGORY</span>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 mt-10 gap-4 ">
         {category.map((e) => {
@@ -34,7 +35,7 @@ export async function ShopCategory() {
                     src={e.image}
                     width={500}
                     height={500}
-                    alt={e.Category}
+                    alt={`image of ${e.Category}`}
                     className="rounded-xl  h-[254px] w-[304px] hover:scale-110 transition-all ease-in"
                   />
                 </div>

@@ -5,9 +5,9 @@ const UserSCHEMA = new mongoose.Schema(
     name: String,
     email: String,
     provider: String,
-    Cart: [],
+    Cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "PRODUCT_MODEL" }],
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
 const UserMODEL = mongoose.models.users || mongoose.model("users", UserSCHEMA);

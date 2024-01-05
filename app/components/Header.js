@@ -23,8 +23,7 @@ const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Collection", link: "/collection" },
-    { name: "Deals", link: "#" },
-    { name: "Gifts", link: "#" },
+
     { name: "About", link: "#" },
   ];
   return (
@@ -52,8 +51,11 @@ const Header = () => {
           })}
         </div>
         <div className=" md:flex md:justify-center flex justify-end ">
-          <Link aria-label="cart" className="relative" href="/Cart">
-            <PiShoppingBagThin className="h-12 w-14 md: ml-2 mt-3 md:mt-5 " />
+          <Link className="relative" href="/Cart">
+            <PiShoppingBagThin
+              aria-label="cart"
+              className="h-12 w-14 md: ml-2 mt-3 md:mt-5 "
+            />
             <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem] md:ml-2   rounded-2xl">
               <span className="flex justify-center">{Cart.length}</span>
             </span>

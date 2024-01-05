@@ -3,7 +3,6 @@ import { addToCart } from "@/Redux/CartSlice";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { IoClose } from "react-icons/io5";
-import { BsBagCheckFill } from "react-icons/bs";
 
 // import { POST_ARRAY } from "../api/Operations/route";
 
@@ -17,6 +16,8 @@ const Button = ({ data }) => {
     setIsOpen(true);
     setInterval(() => setIsOpen(false), 1300);
   };
+
+  const ADDTOCART = async () => {};
 
   return (
     <div>
@@ -46,6 +47,10 @@ const Button = ({ data }) => {
           </div>
         </div>
       )}
+
+      {/* <button className="bg-red-500">
+        <WishlistButton className="h-96 w-80 text-blue-500 bg-green-500" />
+      </button> */}
     </div>
   );
 };

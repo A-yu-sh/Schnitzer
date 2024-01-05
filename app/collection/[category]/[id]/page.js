@@ -25,6 +25,8 @@ const page = async ({ params }) => {
   const STOCK = data.quantity;
   const EMI = (data.price / 36 + 20).toFixed();
 
+  const HandleWishList = async () => {};
+
   return (
     <div>
       <div className="grid  grid-cols-1 md:grid-cols-2 mt-20">
@@ -56,7 +58,9 @@ const page = async ({ params }) => {
                 <div className="font-bold text-red-600">Out of Stock</div>
               )}{" "}
             </div>
-            <hr className="mt-5 w-1/2 md:w-[34rem] " />
+            <div className="flex justify-center md:justify-start">
+              <hr className="mt-5 w-1/2 md:w-[34rem] " />
+            </div>
             <div className="mt-7">
               <div className="max-w-[60ch] text-center md:text-left">
                 {data.description}{" "}

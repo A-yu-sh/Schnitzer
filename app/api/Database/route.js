@@ -16,7 +16,7 @@ export async function GET(request, response) {
   } else {
     const res = await PRODUCT_MODEL.find();
     await CLI.set("Collection", JSON.stringify(res));
-    CLI.expire("Collection", 600);
+    CLI.expire("Collection", 1800);
     return NextResponse.json(res);
   }
 }

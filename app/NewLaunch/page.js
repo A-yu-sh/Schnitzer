@@ -1,14 +1,21 @@
-import { GET_NEW_LAUNCH_DATA } from "../api/Operations/route";
+"use client";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Anton } from "next/font/google";
-import Image from "next/image";
 
+import Image from "next/image";
+import { useEffect, useState } from "react";
 const anton = Anton({
   weight: "400",
   subsets: ["vietnamese"],
 });
 
-export default async function NewLaunch() {
-  const data = await GET_NEW_LAUNCH_DATA();
+export default function NewLaunch() {
   return (
     <section className="">
       <h1
@@ -16,27 +23,13 @@ export default async function NewLaunch() {
         Newly Launched Products
       </h1>
       <div className="flex justify-center  overflow-hidden space-x-10">
-        {data &&
-          data
-            .filter((e, idx) => {
-              return idx > 2;
-            })
-            .map((e) => {
-              return (
-                <div
-                  key={e._id}
-                  className="flex justify-center border-2 border-gray-500 m-20 rounded-lg">
-                  <Image
-                    src={e.image}
-                    width={300}
-                    height={300}
-                    alt={e.name}
-                    className="flex justify-center p-14 hover:scale-125 transition-all ease-in"
-                  />{" "}
-                  <p>{e.name}</p>
-                </div>
-              );
-            })}
+        <Carousel>
+          <CarouselContent>
+            <CarouselItem>lmao</CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );

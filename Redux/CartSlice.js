@@ -36,7 +36,8 @@ const cartSlice = createSlice({
         (item) => item._id === action.payload._id
       );
       if (state.CART_PRODUCT[Item_Index].Quantity > 1) {
-        state.CART_PRODUCT[Item_Index].Quantity -= 1;
+        const dt = (state.CART_PRODUCT[Item_Index].Quantity -= 1);
+        localStorage.setItem("Sch-cart", JSON.stringify(dt));
       } else if (state.CART_PRODUCT[Item_Index].Quantity >= 1) {
         const nextItems = state.CART_PRODUCT.filter(
           (item) => item._id !== action.payload._id

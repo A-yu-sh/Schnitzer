@@ -61,13 +61,13 @@ const page = () => {
           <hr />
         </div>
         {Cart.length > 0 ? (
-          <div className="grid grid-cols-1 ">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             <div>
               {Cart &&
                 Cart.map((e) => {
                   return (
-                    <div className="flex justify-center">
-                      <section className="flex border-2 p-5 w-full md:w-1/2 border-gray-200 rounded-lg mt-10">
+                    <div className="flex justify-start">
+                      <section className="flex border-2 p-5 w-full  border-gray-200 rounded-lg mt-10">
                         <div>
                           <Image
                             src={e.image}
@@ -111,17 +111,21 @@ const page = () => {
                 })}{" "}
               <div className="mt-5">
                 <hr />
-                <CartTotalAmount />
               </div>
               <div className="flex justify-center mt-7">
+                {/* <CheckOutButton /> */}
+              </div>{" "}
+            </div>
+            <div className="grid grid-cols-1">
+              <div className="m-0 md:ml-auto">
+                <CartTotalAmount />
                 <button
                   onClick={() => checkout(Cart)}
-                  className=" bg-black text-white px-20 py-5 rounded-lg">
+                  className=" bg-black text-white px-20 py-5 mt-7 rounded-lg">
                   {" "}
                   Proceed To Checkout
                 </button>
-                {/* <CheckOutButton /> */}
-              </div>{" "}
+              </div>
             </div>
           </div>
         ) : (

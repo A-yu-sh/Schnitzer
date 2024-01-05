@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../components/Container";
 import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
+import { Redis } from "ioredis";
 
 // The Font For the Heading
 const anton = Anton({
@@ -10,16 +11,22 @@ const anton = Anton({
 });
 
 // The REDIS CLIENT
-
-// The Function to Get All the Product
+const CLI = new Redis();
 
 const FETCHER = async () => {
-  const res = await fetch("http://localhost:3000/api/Database", {
-    cache: "no-store",
-  });
-  const data = await res.json();
-
-  return data;
+  const CachedValue = await CLI.get("Collection_Products");
+  if (CachedValue) {
+    const ReturnData = JSON.parse(CachedValue);
+    return ReturnData;
+  } else {
+    const res = await fetch("http://localhost:3000/api/Database", {
+      cache: "no-store",
+    });
+    const data = await res.json();
+    await CLI.set("Collection_Products", JSON.stringify(data));
+    CLI.expire("Collection_Products", 600);
+    return data;
+  }
 };
 
 const page = async () => {

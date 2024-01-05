@@ -22,6 +22,7 @@ const LoginButton = () => {
   const [login, setLogin] = useState("");
 
   if (status === "authenticated") {
+    localStorage.setItem("user-session", JSON.stringify(session.user));
     return (
       <div>
         <button className=" rounded-lg mt-5 ml-4 md:ml-14 md:mt-7 ">
@@ -41,11 +42,7 @@ const LoginButton = () => {
               <DropdownMenuItem>
                 <CgProfile />
                 <span className="ml-2">
-                  <Link
-                    href="/profile/[name]"
-                    as={`/profile/${session.user.name}`}>
-                    Profile
-                  </Link>
+                  <Link href="/profile">Profile</Link>
                 </span>
               </DropdownMenuItem>
               <DropdownMenuItem>

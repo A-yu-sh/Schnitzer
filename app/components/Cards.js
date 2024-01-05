@@ -1,28 +1,34 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import { Metrophobic, Quicksand } from "next/font/google";
-import { FaStar } from "react-icons/fa";
+import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import Container from "./Container";
 
-const metrophobic = Metrophobic({
+const MONTSERRAT = Montserrat({
   weight: "400",
   subsets: ["latin"],
 });
-
-const quicksand = Quicksand({
-  weight: "600",
+const MONTSERRAT_price = Montserrat({
+  weight: "800",
   subsets: ["latin"],
 });
+
+let value = [
+  { label: "13mm Drivers" },
+  { label: "BEAST™ Mode" },
+  { label: "ENx™ Technology" },
+  { label: "IWP Technology" },
+];
 
 const Cards = ({ id, name, img, Price, Category }) => {
   return (
     <Container>
-      <div>
+      <div className="">
         <Link
           href="/collection/[category]/[id]"
           as={`/collection/${Category}/${id}`}>
-          <div className="border-2 border-gray-200  w-[17rem] md:w-[20rem] rounded-lg mt-10 p-5">
+          <div className="border-2   w-[17rem] md:w-[20rem] rounded-lg mt-10 p-5">
             <div className="flex justify-center">
               <Image
                 src={img}
@@ -30,41 +36,33 @@ const Cards = ({ id, name, img, Price, Category }) => {
                 height={150}
                 priority={true}
                 alt={`image of ${name}`}
-                className="flex justify-center bg-stone-100 rounded-lg  transition-all hover:scale-105 ease-in h-[15rem] w-[18rem] p-20"
+                className="flex justify-center bg-stone-100 rounded-t-lg   h-[15rem] w-[18rem] p-20"
               />
             </div>
+            <p className="flex justify-center rounded-b-lg py-2 font-bold bg-yellow-300">
+              60hrs playback
+            </p>
 
-            <p
-              className={`${quicksand.className} font-bold text-xl mt-2 ml-7 `}>
+            <p className={`${MONTSERRAT.className} font-bold text-xl mt-2  `}>
               {name}
             </p>
             <p
-              className={`${quicksand.className} font-bold text-xl mt-2 ml-7 max-w-[12ch]`}>
+              className={`${MONTSERRAT_price.className} font-bold text-2xl mt-2  `}>
               ${Price}
             </p>
-          </div>
-
-          {/* <div>
-          <div className="flex w-80 mt-12 flex-col border-2 rounded-xl overflow-hidden border-opacity-20">
-            <div className="flex justify-center ">
-              <Image
-                src={img}
-                alt={name}
-                width={50}
-                height={50}
-                className=" bg-stone-100 rounded-lg  transition-all hover:scale-125 ease-in  p-10"
-              />
-            </div>
-            <div className="p-5">
-              <h1 className="text-1xl leading-none mb-3 font-Nunito mt-2">
-                {name}
-              </h1>
-              <p className="text-lg leading-none text-primary-800 font-Nunito font-bold">
-                ${Price}
-              </p>
+            <hr />
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-5 mt-4">
+              {value.map((e) => {
+                return (
+                  <div
+                    key={e.label}
+                    className="text-[10px]  bg-blue-50 flex justify-center p-1 rounded-lg ">
+                    {e.label}
+                  </div>
+                );
+              })}
             </div>
           </div>
-        </div> */}
         </Link>
       </div>
     </Container>
