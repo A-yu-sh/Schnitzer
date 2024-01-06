@@ -41,7 +41,6 @@ const page = async ({ params }) => {
             <div
               className={`${mitr.className}  flex justify-center md:justify-start text-4xl md:text-6xl font-bold mt-2 md:mt-20`}>
               {data.name}
-              {category}
             </div>
             <div className="mt-5  flex justify-center md:justify-start text-gray-500">
               {Hr} Hours Playback with ENXM Technology
