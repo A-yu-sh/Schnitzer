@@ -34,19 +34,19 @@ export default async function Home() {
         height={2000}
         priority={true}
         alt="The Hero Image"
-        className="h-[80vh] md:h-[100vh] w-[300vh] mt-2 md:mt-8 brightness-50"
+        className="h-[80vh] rounded-b-3xl md:h-[100vh] w-[300vh] mt-2 md:mt-8"
       />
       <div className="relative">
         <h1
-          className={`${anton.className} absolute bottom-52 md:bottom-64 ml-[20%] md:ml-[30%] max-w-[30ch] leading-[3.2rem] md:leading-none md:max-w-[23ch] text-[2.1rem] md:text-[4.2rem] font-bold text-gray-200 `}>
+          className={`${anton.className} absolute bottom-52 md:bottom-64 ml-[2%] md:ml-[30%] max-w-[30ch] leading-[3.2rem] md:leading-none md:max-w-[23ch] text-[2.1rem] md:text-[4.2rem] font-bold text-gray-200 `}>
           Tech Tunes in Harmony{" "}
           <p
-            className={`${dosis.className} text-sm text-center md:text-lg ml-[-20%] md:ml-[-5%] mt-5`}>
+            className={`${dosis.className} text-sm text-center md:text-xl ml-[-20%] md:ml-[-5%] mt-5`}>
             Experience and embrace modern tech elegance with Schnitzer, to
             elevate your tech-savvy lifestyle.{" "}
           </p>
           <p
-            className={`${dosis.className} text-center text-sm md:text-lg ml-[-10%] md:ml-[9%] mt-5`}>
+            className={`${dosis.className} text-center text-sm md:text-xl ml-[-10%] md:ml-[9%] mt-5`}>
             {" "}
             A Statement of Aesthetic Sonic Excellence with 1989's Spirit of
             Rebellion
