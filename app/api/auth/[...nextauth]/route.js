@@ -22,7 +22,7 @@ export const authOptions = {
 
         if (!IF_USER_EXIST) {
           try {
-            const res = await fetch("http://localhost:3000/api/user", {
+            const res = await fetch(`${process.env.URL_VALUE}/api/user`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
