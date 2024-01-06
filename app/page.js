@@ -46,7 +46,7 @@ export default async function Home() {
             elevate your tech-savvy lifestyle.{" "}
           </p>
           <p
-            className={`${dosis.className} text-sm md:text-lg ml-[-10%] md:ml-[9%] mt-5`}>
+            className={`${dosis.className} text-center text-sm md:text-lg ml-[-10%] md:ml-[9%] mt-5`}>
             {" "}
             A Statement of Aesthetic Sonic Excellence with 1989's Spirit of
             Rebellion
