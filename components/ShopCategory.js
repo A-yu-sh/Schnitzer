@@ -12,7 +12,7 @@ let category = [
   { Category: "Speakers", image: "/Speaker.jpg" },
   { Category: "Wireless", image: "/Neckband.webp" },
   { Category: "SmartWatch", image: "/SmartWatch.jpg" },
-  { Category: "Neckband", image: "/Headphone.jpg" },
+  { Category: "Neckband", image: "/HeadPhone.jpg" },
 ];
 
 export async function ShopCategory() {
