@@ -50,7 +50,7 @@ const Header = () => {
             );
           })}
         </div>
-        <div className=" md:flex md:justify-center flex justify-end ">
+        <div className=" md:flex md:justify-center flex justify-center ">
           <Link className="relative" href="/Cart">
             <PiShoppingBagThin
               aria-label="cart"
