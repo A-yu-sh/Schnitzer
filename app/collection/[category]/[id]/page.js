@@ -2,11 +2,8 @@ import { Mitr, Metrophobic } from "next/font/google";
 import React from "react";
 import { GET_DATA_BY_ID } from "@/app/api/Operations/route";
 import Image from "next/image";
-import DrawAccordion from "./Accordion";
-import QuantityCounter from "../../../Cart/QuantityCounter";
 import Button from "@/app/components/Button";
-import { useDispatch } from "react-redux";
-import { addToCart } from "@/Redux/CartSlice";
+import RelatedProduct from "./RelatedProduct";
 
 const mitr = Mitr({
   weight: "400",
@@ -19,13 +16,12 @@ const metrophobic = Metrophobic({
 
 const page = async ({ params }) => {
   const id = params.id;
+  const category = params.category;
   const data = await GET_DATA_BY_ID(id);
   const Truedata = JSON.parse(JSON.stringify(data));
   const Hr = Math.floor(Math.random() * 20) + 15;
   const STOCK = data.quantity;
   const EMI = (data.price / 36 + 20).toFixed();
-
-  const HandleWishList = async () => {};
 
   return (
     <div>
@@ -45,6 +41,7 @@ const page = async ({ params }) => {
             <div
               className={`${mitr.className}  flex justify-center md:justify-start text-4xl md:text-6xl font-bold mt-2 md:mt-20`}>
               {data.name}
+              {category}
             </div>
             <div className="mt-5  flex justify-center md:justify-start text-gray-500">
               {Hr} Hours Playback with ENXM Technology
@@ -93,7 +90,8 @@ const page = async ({ params }) => {
           </div>
         </div>
       </div>
-      {/* <DrawAccordion /> */}
+
+      <RelatedProduct category={category} id={id} />
     </div>
   );
 };

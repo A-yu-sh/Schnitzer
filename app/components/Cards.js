@@ -21,7 +21,7 @@ let value = [
   { label: "IWP Technology" },
 ];
 
-const Cards = ({ id, name, img, Price, Category }) => {
+const Cards = ({ id, name, img, Price, Category, description }) => {
   return (
     <Container>
       <div className="">
@@ -50,6 +50,7 @@ const Cards = ({ id, name, img, Price, Category }) => {
               className={`${MONTSERRAT_price.className} font-bold text-2xl mt-2  `}>
               ${Price}
             </p>
+
             <hr />
             <div className="grid grid-cols-2 md:grid-cols-2 gap-5 mt-4">
               {value.map((e) => {
