@@ -28,7 +28,7 @@ const Header = () => {
   ];
   return (
     <div className="">
-      <nav className=" relative ">
+      <nav className=" relative z-50">
         <div className="fixed bg-white shadow-md  mb-3 pb-5  top-0 left-0 right-0  grid grid-cols-3">
           <div
             className={`${pacifico.className} text-3xl flex justify-start md:justify-center ml-2 md:text-4xl md:ml-5 mt-5`}>
