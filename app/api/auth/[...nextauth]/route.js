@@ -41,7 +41,7 @@ export const authOptions = {
       return user;
     },
   },
-  secret: process.env.GOOGLE_CLIENT_SECRET,
+  secret: process.env.GOOGLE_Auth_SECRET,
 };
 
 const Handler = NextAuth(authOptions);
