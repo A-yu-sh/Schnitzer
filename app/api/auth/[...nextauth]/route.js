@@ -19,6 +19,7 @@ export const authOptions = {
     async signIn({ user, account }) {
       if (account.provider === "google") {
         const { name, email } = user;
+
         const { provider } = account;
         await CONNECT_MONGO_DB();
         const IF_USER_EXIST = await UserMODEL.findOne({ email });
@@ -41,7 +42,7 @@ export const authOptions = {
           }
         }
       }
-      return user;
+      // return user;
     },
   },
 };
