@@ -10,9 +10,10 @@ const dosis = Dosis({
 
 export default function Page() {
   const { data: session, status } = useSession();
+  let name;
 
   if (typeof window !== "undefined") {
-    const name = JSON.parse(localStorage.getItem("user-session"));
+    name = JSON.parse(localStorage.getItem("user-session"));
   }
 
   if (status === "loading") {

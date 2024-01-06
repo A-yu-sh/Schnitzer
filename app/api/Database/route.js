@@ -3,7 +3,15 @@ import PRODUCT_MODEL from "@/model/ProductModel";
 import { NextResponse } from "next/server";
 import { Redis } from "ioredis";
 
-const CLI = new Redis(6379);
+const REDISHOST = process.env.REDIS_HOST;
+const REDISPORT = 6379;
+const REDISAUTH = process.env.AUTHSTRING;
+
+const CLI = new Redis({
+  port: REDISPORT,
+  host: REDISHOST,
+  password: REDISAUTH,
+});
 
 export async function GET(request, response) {
   await CONNECT_MONGO_DB();
