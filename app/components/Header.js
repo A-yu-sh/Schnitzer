@@ -27,53 +27,55 @@ const Header = () => {
     { name: "About", link: "#" },
   ];
   return (
-    <nav className="relative ">
-      <div className="  grid grid-cols-3">
-        <div
-          className={`${pacifico.className} text-3xl flex justify-start md:justify-center ml-2 md:text-4xl md:ml-5 mt-5`}>
-          <Link href="/">Schn. </Link>
-        </div>
+    <div className="">
+      <nav className=" relative ">
+        <div className="fixed bg-white shadow-md  mb-3 pb-5  top-0 left-0 right-0  grid grid-cols-3">
+          <div
+            className={`${pacifico.className} text-3xl flex justify-start md:justify-center ml-2 md:text-4xl md:ml-5 mt-5`}>
+            <Link href="/">Schn. </Link>
+          </div>
 
-        <div
-          className={`md:flex md:justify-center md:space-x-7 md:pb-0 absolute md:static border-2 border-gray-200 md:border-none md:bg-white md:z-fit z-[auto] left-0 md:w-auto md:pl-0 pl-9 flex ml-[44%] sm:ml-[60%] md:ml-0 flex-col md:flex-row  w-[12rem]  rounded-lg p-7 leading-9 md:text-black text-black bg-white mt-[4.2rem] md:mt-0 transition-all ease-in-out ${
-            open ? "top-[200]" : "top-[-1100px]"
-          }
+          <div
+            className={`md:flex md:justify-center md:space-x-7 md:pb-0 absolute md:static border-2 bg-white md:bg-inherit border-gray-200 md:border-none md:z-fit z-[auto] left-0 md:w-auto md:pl-0 pl-9 flex ml-[44%] sm:ml-[60%] md:ml-0 flex-col md:flex-row  w-[12rem]  rounded-lg p-7 leading-9 md:text-black text-black  mt-[4.2rem] md:mt-0 transition-all ease-in-out ${
+              open ? "top-[200]" : "top-[-1100px]"
+            }
 `}>
-          {Links.map((e) => {
-            return (
-              <Link
-                key={e?.name}
-                href={e?.link}
-                className="mr-5 hover:text-gray-400">
-                {e?.name}
-              </Link>
-            );
-          })}
-        </div>
-        <div className=" md:flex md:justify-center flex justify-center ">
-          <Link className="relative" href="/Cart">
-            <PiShoppingBagThin
-              aria-label="cart"
-              className="h-12 w-14 md: ml-2 mt-3 md:mt-5 "
-            />
-            <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem] md:ml-2   rounded-2xl">
-              <span className="flex justify-center">{Cart.length}</span>
-            </span>
-          </Link>
+            {Links.map((e) => {
+              return (
+                <Link
+                  key={e?.name}
+                  href={e?.link}
+                  className="mr-5 hover:text-gray-400">
+                  {e?.name}
+                </Link>
+              );
+            })}
+          </div>
+          <div className=" md:flex md:justify-center flex justify-center ">
+            <Link className="relative" href="/Cart">
+              <PiShoppingBagThin
+                aria-label="cart"
+                className="h-12 w-14 md: ml-2 mt-3 md:mt-5 "
+              />
+              <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem] md:ml-2   rounded-2xl">
+                <span className="flex justify-center">{Cart.length}</span>
+              </span>
+            </Link>
 
-          <LoginButton />
+            <LoginButton />
+          </div>
+          <div
+            onClick={() => setOpen(!open)}
+            className="flex justify-end mr-11 md:hidden ">
+            {open ? (
+              <IoCloseOutline className="h-7 w-8 mt-6" />
+            ) : (
+              <RxHamburgerMenu className="h-7 w-8 mt-6" />
+            )}
+          </div>
         </div>
-        <div
-          onClick={() => setOpen(!open)}
-          className="flex justify-end mr-11 md:hidden ">
-          {open ? (
-            <IoCloseOutline className="h-7 w-8 mt-6" />
-          ) : (
-            <RxHamburgerMenu className="h-7 w-8 mt-6" />
-          )}
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
