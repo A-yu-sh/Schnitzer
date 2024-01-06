@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 import UserMODEL from "@/model/UserModel";
 
 export async function POST(req, res) {
-  const { name, email, provider } = await req.json();
+  const { authId, name, email, provider } = await req.json();
   await CONNECT_MONGO_DB();
-  await UserMODEL.create({ name, email, provider });
+  await UserMODEL.create({ authId, name, email, provider });
 
   return NextResponse.json({ message: "created" });
 }

@@ -18,20 +18,19 @@ export const authOptions = {
   callbacks: {
     async signIn({ user, account }) {
       if (account.provider === "google") {
-        const { name, email } = user;
-
+        const { id, name, email } = user;
+        console.log("user", user);
         const { provider } = account;
         await CONNECT_MONGO_DB();
         const IF_USER_EXIST = await UserMODEL.findOne({ email });
 
         if (!IF_USER_EXIST) {
           try {
-            const res = await fetch(`${process.env.URL_VALUE}/api/user`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ name, email, provider }),
+            const res = await UserMODEL.create({
+              authId: id,
+              name: name,
+              email: email,
+              provider: provider,
             });
 
             if (res.ok) {
