@@ -20,9 +20,12 @@ const FETCHER = async () => {
   // const ReturnData = JSON.parse(CachedValue);
   // return ReturnData;
   // } else {
-  const res = await fetch("http://localhost:3000/api/Database", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://schnitzer-nb82lo97f-a-yu-sh.vercel.app/api/Database",
+    {
+      cache: "no-store",
+    }
+  );
   const data = await res.json();
   // await CLI.set("Collection_Products", JSON.stringify(data));
   // CLI.expire("Collection_Products", 600);
