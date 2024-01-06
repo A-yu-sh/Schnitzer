@@ -54,7 +54,7 @@ export default async function Home() {
                 OF THE <span className="text-rose-500 ml-2 mr-2">AUDIO</span>
               </h1>
               <p
-                className={`${montserrat.className} md:mt-20 mt-14 text-sm md:leading-10 md:text-xl leading-7 text-center flex justify-center  `}>
+                className={`${montserrat.className} md:mt-20 mt-10 text-sm md:leading-10 md:text-xl leading-7 text-center flex justify-center  `}>
                 {" "}
                 <Balancer ratio={1}>
                   Our commitment to delivering unparalleled sound quality,
