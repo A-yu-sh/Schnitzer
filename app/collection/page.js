@@ -11,15 +11,8 @@ const anton = Anton({
 });
 
 // The REDIS CLIENT
-const REDISHOST = process.env.REDIS_HOST;
-const REDISPORT = 6379;
-const REDISAUTH = process.env.AUTHSTRING;
 
-const CLI = new Redis({
-  port: REDISPORT,
-  host: REDISHOST,
-  password: REDISAUTH,
-});
+const CLI = new Redis();
 
 const FETCHER = async () => {
   const CachedValue = await CLI.get("Collection_Products");
