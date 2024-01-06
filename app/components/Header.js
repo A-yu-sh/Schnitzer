@@ -30,7 +30,7 @@ const Header = () => {
     <nav className="relative ">
       <div className="  grid grid-cols-3">
         <div
-          className={`${pacifico.className} text-3xl flex justify-center ml-2 md:text-4xl md:ml-5 mt-5`}>
+          className={`${pacifico.className} text-3xl flex justify-start md:justify-center ml-2 md:text-4xl md:ml-5 mt-5`}>
           <Link href="/">Schn. </Link>
         </div>
 
