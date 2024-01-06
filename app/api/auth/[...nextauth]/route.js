@@ -12,6 +12,9 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+
+  secret: process.env.AUTH_SECRET,
+
   callbacks: {
     async signIn({ user, account }) {
       if (account.provider === "google") {
@@ -41,7 +44,6 @@ export const authOptions = {
       return user;
     },
   },
-  secret: process.env.AUTH_SECRET,
 };
 
 const Handler = NextAuth(authOptions);
