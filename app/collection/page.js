@@ -37,7 +37,7 @@ const page = async () => {
     <Container>
       <div>
         <div
-          className={`${anton.className} mt-20 flex justify-center  text-4xl md:text-7xl`}>
+          className={`${anton.className} mt-52 flex justify-center  text-4xl md:text-7xl`}>
           OUR COLLECTION
         </div>
 

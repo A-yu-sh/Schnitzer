@@ -19,7 +19,7 @@ export const authOptions = {
     async signIn({ user, account }) {
       if (account.provider === "google") {
         const { id, name, email } = user;
-        console.log("user", user);
+
         const { provider } = account;
         await CONNECT_MONGO_DB();
         const IF_USER_EXIST = await UserMODEL.findOne({ email });

@@ -38,7 +38,7 @@ export default async function Home() {
       />
       <div className="relative">
         <h1
-          className={`${anton.className} absolute bottom-52 md:bottom-64 ml-[18%] md:ml-[30%] max-w-[30ch] leading-[3.2rem] md:leading-none md:max-w-[23ch] text-[2.1rem] md:text-[4.2rem] font-bold text-gray-200 `}>
+          className={`${anton.className} absolute bottom-52 md:bottom-64 z-auto ml-[18%] md:ml-[30%] max-w-[30ch] leading-[3.2rem] md:leading-none md:max-w-[23ch] text-[2.1rem] md:text-[4.2rem] font-bold text-gray-200 `}>
           Tech Tunes in Harmony{" "}
           <p
             className={`${dosis.className} text-sm text-center md:text-xl ml-[-20%] md:ml-[-5%] mt-5`}>
