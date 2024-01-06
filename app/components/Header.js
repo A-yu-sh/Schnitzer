@@ -31,7 +31,7 @@ const Header = () => {
       <div className="  grid grid-cols-3">
         <div
           className={`${pacifico.className} text-3xl flex justify-center ml-2 md:text-4xl md:ml-5 mt-5`}>
-          <Link href="/">Schnitzer. </Link>
+          <Link href="/">Schn. </Link>
         </div>
 
         <div

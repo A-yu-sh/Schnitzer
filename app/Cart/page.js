@@ -86,7 +86,7 @@ const page = () => {
                           <div className=" w-full relative">
                             <button
                               aria-label="remove"
-                              className="absolute left-64 md:left-[29rem] border-2  h-8 w-8 flex justify-end items-center px-2 rounded-lg"
+                              className="absolute left-60 md:left-[29rem] border-2  h-8 w-8 flex justify-end items-center px-2 rounded-lg"
                               onClick={() => Remove(e)}>
                               <GrClose />
                             </button>
