@@ -1,8 +1,7 @@
-export default function Head({ params }) {
-  const category = params.category;
+export default function Head() {
   return (
     <>
-      <title>Schnitzer | ${category}</title>
+      <title>Schnitzer</title>
       <meta
         name="description"
         content="Explore Cutting-Edge Gadgets at Schnitzer Tech Hub | Earphones, Smartwatches, Speakers & More"
