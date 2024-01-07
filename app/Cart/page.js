@@ -1,7 +1,7 @@
 "use client";
 import { removeFromCart } from "@/Redux/CartSlice";
 import { Lato, Roboto } from "next/font/google";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import QuantityCounter from "./QuantityCounter";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import Link from "next/link";
 import { FaHeadphonesSimple } from "react-icons/fa6";
 import { loadStripe } from "@stripe/stripe-js";
 import { CheckOutOrder } from "@/libs/CheckoutOrder";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const roboto = Roboto({
   weight: "400",
@@ -23,9 +24,17 @@ const lato = Lato({
   subsets: ["latin"],
 });
 const page = () => {
+  const { data: session, status } = useSession();
   const dispatch = useDispatch();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const Cart = useSelector((state) => state.cart.CART_PRODUCT);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      setIsLoggedIn(true);
+    }
+  }, [status]);
 
   // Make sure to call `loadStripe` outside of a component’s render to avoid
   // recreating the `Stripe` object on every render.
@@ -119,12 +128,25 @@ const page = () => {
             <div className="grid grid-cols-1">
               <div className="m-0 md:ml-auto">
                 <CartTotalAmount />
-                <button
-                  onClick={() => checkout(Cart)}
-                  className=" bg-black text-white px-20 py-5 mt-7 rounded-lg">
-                  {" "}
-                  Proceed To Checkout
-                </button>
+                {isLoggedIn ? (
+                  <div>
+                    <button
+                      onClick={() => checkout(Cart)}
+                      className=" bg-black text-white px-20 py-5 mt-7 rounded-lg">
+                      {" "}
+                      Proceed To Checkout
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <button
+                      disabled={true}
+                      className=" bg-gray-400 text-white px-20 py-5 mt-7 rounded-lg">
+                      {" "}
+                      Please Login To Continue
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

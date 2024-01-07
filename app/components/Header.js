@@ -55,9 +55,9 @@ const Header = () => {
             <Link className="relative" href="/Cart">
               <PiShoppingBagThin
                 aria-label="cart"
-                className="h-12 w-14 md: ml-2 mt-3 md:mt-5 "
+                className="h-10 w-10 md: ml-2 mt-3 md:mt-5 "
               />
-              <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem] md:ml-2   rounded-2xl">
+              <span className="  h-[25px] w-[25px] text-[14px] absolute left-0 bg-black text-white font-extralight top-[1.375rem] md:ml-0   rounded-2xl">
                 <span className="flex justify-center">{Cart.length}</span>
               </span>
             </Link>

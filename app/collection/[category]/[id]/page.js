@@ -21,7 +21,7 @@ const page = async ({ params }) => {
   const Truedata = JSON.parse(JSON.stringify(data));
   const Hr = Math.floor(Math.random() * 20) + 15;
   const STOCK = data.quantity;
-  const EMI = (data.price / 36 + 20).toFixed();
+  const EMI = (data.price / 36 + 3).toFixed();
 
   return (
     <div>
@@ -52,7 +52,9 @@ const page = async ({ params }) => {
                   Available In Stock
                 </div>
               ) : (
-                <div className="font-bold text-red-600">Out of Stock</div>
+                <div className="font-bold text-red-600  flex justify-center md:justify-start">
+                  Out of Stock
+                </div>
               )}{" "}
             </div>
             <div className="flex justify-center md:justify-start">
@@ -71,11 +73,11 @@ const page = async ({ params }) => {
               className={`${metrophobic.className}  mt-3 leading-7 text-gray-500`}>
               <div className="flex justify-center md:justify-start">
                 {" "}
-                From ₹{EMI}/Mo
+                From ${EMI}/Mo
               </div>
               <div className="flex justify-center md:justify-start">
                 {" "}
-                Includes Service Charge of ₹200
+                Includes Service Charge of $3
               </div>
               <div className="flex justify-center md:justify-start">
                 {" "}
