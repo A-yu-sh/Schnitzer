@@ -2,7 +2,15 @@ import React from "react";
 import Container from "../components/Container";
 import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
+
 // import { Redis } from "ioredis";
+
+export const metadata = {
+  title: "Schnitzer | Collection",
+  description:
+    "Explore Cutting-Edge Gadgets at Schnitzer Tech Hub | Earphones, Smartwatches, Speakers & More",
+  content: "",
+};
 
 // The Font For the Heading
 const anton = Anton({

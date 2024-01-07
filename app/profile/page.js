@@ -27,7 +27,7 @@ export default function Page() {
   return (
     <div>
       <Container>
-        <div className="flex justify-center md:justify-start font-bold text-4xl mt-10">
+        <div className="flex justify-center md:justify-start font-bold text-4xl mt-24">
           <h1 className={`${dosis.className}`}>Welcome {name.name}!</h1>
         </div>
       </Container>

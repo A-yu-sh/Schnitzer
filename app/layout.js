@@ -7,11 +7,23 @@ import Head from "./head";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata = {
+  title: "Schnitzer | Explore The Innovation",
+  description:
+    "Explore Cutting-Edge Gadgets at Schnitzer Tech Hub | Earphones, Smartwatches, Speakers & More",
+  icons: {
+    icon: ["/favicon.ico?v=4"],
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {" "}
-      <Head />
+      {/* <Head /> */}
+      {/* <Head>
+        
+      </Head> */}
       <body className={inter.className}>
         <Providers>
           <NextAuthProvider>

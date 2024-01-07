@@ -25,6 +25,7 @@ const page = async ({ params }) => {
 
   return (
     <div>
+      {" "}
       <div className="grid  grid-cols-1 md:grid-cols-2 mt-20">
         <div className="flex   mt-20 m-20 bg-stone-300 ml-[24%]  rounded-xl ">
           <Image
@@ -89,7 +90,6 @@ const page = async ({ params }) => {
           </div>
         </div>
       </div>
-
       <RelatedProduct category={category} id={id} />
     </div>
   );
