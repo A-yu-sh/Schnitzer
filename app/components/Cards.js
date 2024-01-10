@@ -7,11 +7,11 @@ import Container from "./Container";
 
 const MONTSERRAT = Montserrat({
   weight: "400",
-  subsets: ["latin"],
+  subsets: ["cyrillic-ext"],
 });
 const MONTSERRAT_price = Montserrat({
   weight: "800",
-  subsets: ["latin"],
+  subsets: ["cyrillic-ext"],
 });
 
 let value = [
@@ -39,7 +39,8 @@ const Cards = ({ id, name, img, Price, Category, description }) => {
                 className="flex justify-center bg-stone-100 rounded-t-lg   h-[15rem] w-[18rem] p-20"
               />
             </div>
-            <p className="flex justify-center rounded-b-lg py-2 font-bold bg-yellow-300">
+            <p
+              className={`${MONTSERRAT_price.className} flex justify-center rounded-b-lg py-2 font-bold bg-yellow-300`}>
               60hrs playback
             </p>
 

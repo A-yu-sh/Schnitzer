@@ -12,17 +12,17 @@ import StaticCards from "./components/StaticCards";
 
 const dosis = Dosis({
   weight: "500",
-  subsets: ["vietnamese"],
+  subsets: ["latin"],
 });
 
 const anton = Anton({
   weight: "400",
-  subsets: ["vietnamese"],
+  subsets: ["latin-ext"],
 });
 
 const montserrat = Montserrat_Alternates({
   weight: "400",
-  subsets: ["vietnamese"],
+  subsets: ["latin-ext"],
 });
 
 export default async function Home() {
@@ -44,12 +44,6 @@ export default async function Home() {
             className={`${dosis.className} text-sm text-center md:text-xl ml-[-20%] md:ml-[-5%] mt-5`}>
             Experience and embrace modern tech elegance with Schnitzer, to
             elevate your tech-savvy lifestyle.{" "}
-          </p>
-          <p
-            className={`${dosis.className} text-center text-sm md:text-xl ml-[-18%] md:ml-[9%] mt-5`}>
-            {" "}
-            A Statement of Aesthetic Sonic Excellence with 1989's Spirit of
-            Rebellion
           </p>
         </h1>
       </div>

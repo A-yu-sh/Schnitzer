@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const anton = Anton({
   weight: "400",
-  subsets: ["vietnamese"],
+  subsets: ["latin-ext"],
 });
 
 let category = [

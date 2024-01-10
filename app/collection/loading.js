@@ -4,7 +4,7 @@ import ReactLoading from "react-loading";
 
 const pacifico = Pacifico({
   weight: "400",
-  subsets: ["latin"],
+  subsets: ["cyrillic-ext"],
 });
 
 const loading = () => {

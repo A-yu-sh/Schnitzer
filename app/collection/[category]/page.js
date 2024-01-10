@@ -16,7 +16,7 @@ const page = async ({ params }) => {
   return (
     <div className="flex">
       <Container>
-        <h1 className={`${anton.className} justify-center text-3xl mt-9`}>
+        <h1 className={`${anton.className} justify-center text-3xl mt-24`}>
           Browse {category}
         </h1>
         <div className={` grid grid-cols-1 gap-8 md:grid-cols-3`}>

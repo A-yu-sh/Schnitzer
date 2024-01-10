@@ -18,8 +18,8 @@ const CartTotalAmount = () => {
       <p>Price Details ({Cart.length} items)</p>
       {Cart.map((e) => {
         return (
-          <div className="flex md:grid grid-cols-1 mt-2 md:grid-cols-3 border rounded-lg p-7">
-            <div className="">{e.name}</div>
+          <div className="flex w-auto md:grid grid-cols-1 mt-2 md:grid-cols-3 border rounded-lg p-7">
+            <div className="px-5">{e.name}</div>
             <div className="ml-auto md:ml-0 flex justify-end">{e.Quantity}</div>
             <div className="ml-auto md:ml-0 flex justify-end">{e.price}/pc</div>
           </div>

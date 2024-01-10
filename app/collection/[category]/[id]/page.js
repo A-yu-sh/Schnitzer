@@ -7,11 +7,11 @@ import RelatedProduct from "./RelatedProduct";
 
 const mitr = Mitr({
   weight: "400",
-  subsets: ["latin"],
+  subsets: ["latin-ext"],
 });
 const metrophobic = Metrophobic({
   weight: "400",
-  subsets: ["latin"],
+  subsets: ["latin-ext"],
 });
 
 const page = async ({ params }) => {

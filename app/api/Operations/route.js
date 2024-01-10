@@ -46,3 +46,9 @@ export const GET_USER = async (id) => {
   const res = UserMODEL.aggregate([{ $match: { _id: `${id}` } }]);
   return res;
 };
+
+export const GET_DATA_BY_QUERY = async (query) => {
+  await CONNECT_MONGO_DB();
+  const res = PRODUCT_MODEL.aggregate([{ $match: { category: `${query}` } }]);
+  return res;
+};

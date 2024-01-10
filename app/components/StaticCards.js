@@ -2,19 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { Montserrat, Prompt, Raleway } from "next/font/google";
 
-const prompt = Prompt({
-  weight: "700",
-  subsets: ["latin-ext"],
-});
-
 const montesrrat = Montserrat({
   weight: "300",
-  subsets: ["vietnamese"],
+  subsets: ["cyrillic-ext"],
 });
 
 const raleway = Raleway({
   weight: "700",
-  subsets: ["vietnamese"],
+  subsets: ["latin"],
 });
 
 const StaticCards = ({ Heading, Paragraph, Images, Position }) => {

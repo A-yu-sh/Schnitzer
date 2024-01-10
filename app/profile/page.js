@@ -12,8 +12,10 @@ export default function Page() {
   const { data: session, status } = useSession();
   let name;
 
-  if (typeof window !== "undefined") {
-    name = JSON.parse(localStorage.getItem("user-session"));
+  if (status === "authenticated") {
+    if (typeof window !== "undefined") {
+      name = JSON.parse(localStorage.getItem("user-session"));
+    }
   }
 
   if (status === "loading") {
@@ -27,8 +29,8 @@ export default function Page() {
   return (
     <div>
       <Container>
-        <div className="flex justify-center md:justify-start font-bold text-4xl mt-24">
-          <h1 className={`${dosis.className}`}>Welcome {name.name}!</h1>
+        <div className="flex justify-center md:justify-start font-bold text-4xl mt-80">
+          <h1 className={`${dosis.className}`}>Welcome </h1>
         </div>
       </Container>
     </div>

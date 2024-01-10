@@ -46,26 +46,3 @@ export const CheckOutOrder = async (req, res, order) => {
     throw error;
   }
 };
-
-// export const StripeWebHook = async (req, res) => {
-//   try {
-//     const RawBody = await getRawBody(req);
-//     const Signature = req.headers["stripe-signature"];
-//     const event = Stripe.webhooks.constructEvent(
-//       RawBody,
-//       Signature,
-//       process.env.STRIPE_WEBHOOK_SECRET
-//     );
-
-//     if (event.type === "checkout.session.completed") {
-//       const session = event.data.object;
-//       const line_items = await Stripe.checkout.sessions.listLineItems(
-//         event.data.object.id
-//       );
-
-//       console.log(line_items);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
