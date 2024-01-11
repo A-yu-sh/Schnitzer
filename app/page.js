@@ -54,7 +54,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="">
               <h1
-                className={`${anton.className} md:mt-40 mt-20 sm:text-3xl text-4xl md:text-6xl  flex justify-center`}>
+                className={`${anton.className} md:mt-40 mt-20 sm:text-[1.5rem] text-4xl md:text-6xl  flex justify-center`}>
                 UNLOCK THE FULL OF THE AUDIO
               </h1>
               <p
