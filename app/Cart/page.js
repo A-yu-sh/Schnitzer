@@ -129,10 +129,10 @@ const page = () => {
               <div className="m-0 md:ml-auto">
                 <CartTotalAmount />
                 {isLoggedIn ? (
-                  <div>
+                  <div className="flex justify-cente">
                     <button
                       onClick={() => checkout(Cart)}
-                      className=" bg-black text-white px-20 py-5 mt-7 rounded-lg">
+                      className=" r bg-black text-white px-20 py-5 mt-7 rounded-lg">
                       {" "}
                       Proceed To Checkout
                     </button>

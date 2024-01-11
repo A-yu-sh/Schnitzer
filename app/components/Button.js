@@ -47,10 +47,6 @@ const Button = ({ data }) => {
           </div>
         </div>
       )}
-
-      {/* <button className="bg-red-500">
-        <WishlistButton className="h-96 w-80 text-blue-500 bg-green-500" />
-      </button> */}
     </div>
   );
 };

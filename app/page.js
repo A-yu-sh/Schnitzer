@@ -6,6 +6,8 @@ import Balancer from "react-wrap-balancer";
 import { ShopCategory } from "./components/ShopCategory";
 import TwoColumnSection from "./components/TwoColumnSection";
 import StaticCards from "./components/StaticCards";
+import TrendingComponent from "./components/TrendingComponent";
+import { Suspense } from "react";
 
 // import TrendingData from "./components/TrendingCards";
 // import TrendingComponent from "./TrendingComponents/TrendingComponent";
@@ -53,8 +55,7 @@ export default async function Home() {
             <div className="">
               <h1
                 className={`${anton.className} md:mt-40 mt-20 sm:text-3xl text-4xl md:text-6xl  flex justify-center`}>
-                UNLOCK THE <span className="text-rose-500 ml-2 mr-2">FULL</span>{" "}
-                OF THE <span className="text-rose-500 ml-2 mr-2">AUDIO</span>
+                UNLOCK THE FULL OF THE AUDIO
               </h1>
               <p
                 className={`${montserrat.className} md:mt-20 mt-10 text-sm md:leading-10 md:text-xl leading-7 text-center flex justify-center  `}>
@@ -88,6 +89,11 @@ export default async function Home() {
           </div>
         </div>{" "}
         <ShopCategory />
+        <div className="m-10 py-7  ">
+          <Suspense>
+            <TrendingComponent />
+          </Suspense>
+        </div>
         <StaticCards
           Heading=" Schnitzer: Elevate Your Tech Lifestyle "
           Paragraph="Discover a symphony of innovation at Schnitzer, your go-to destination for cutting-edge earphones, stylish smartwatches, and powerful speakers. Unleash the power of sound and stay connected with our premium audio and tech accessories. Elevate your everyday experiences with Schnitzer's curated collection of must-have gadgets"

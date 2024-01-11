@@ -20,8 +20,7 @@ export async function ShopCategory() {
     <div>
       <div
         className={`${anton.className} flex justify-center text-4xl md:text-6xl mt-7 md:mt-16`}>
-        <span className="text-rose-500 mr-3">Our</span> TOP SELLING{" "}
-        <span className="text-rose-500 ml-3">CATEGORY</span>
+        Our Top Selling CATEGORY
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 mt-10 gap-4 ">
         {category.map((e) => {
