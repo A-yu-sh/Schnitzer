@@ -4,6 +4,8 @@ import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
 import Search from "./Search";
 import { GET_DATA_BY_QUERY } from "../api/Operations/route";
+import { data } from "autoprefixer";
+import PaginationControls from "./PaginationControls";
 
 export const metadata = {
   title: "Schnitzer | Collection",
@@ -19,8 +21,13 @@ const anton = Anton({
 });
 
 const page = async ({ searchParams }) => {
+  const page = searchParams["page"] ?? `1`;
+  const per_page = searchParams["per_page"] ?? `8`;
+
+  const start = (Number(page) - 1) * Number(per_page);
+  const end = start + Number(per_page);
+
   const query = searchParams.query || "";
-  console.log(query);
 
   const FETCHER = async () => {
     const value = query;
@@ -37,6 +44,7 @@ const page = async ({ searchParams }) => {
   };
 
   const product = await FETCHER();
+  const entries = product.slice(start, end);
 
   return (
     <Container>
@@ -49,7 +57,7 @@ const page = async ({ searchParams }) => {
         <Search />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
-          {product.map((e) => {
+          {entries.map((e) => {
             return (
               <div key={e._id} className="flex justify-center">
                 <Cards
@@ -63,6 +71,7 @@ const page = async ({ searchParams }) => {
             );
           })}
         </div>
+        <PaginationControls queryValue={query} />
       </div>
     </Container>
   );
