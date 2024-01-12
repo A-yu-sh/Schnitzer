@@ -13,16 +13,18 @@ let category = [
   { Category: "Wireless", image: "/Neckband.webp" },
   { Category: "SmartWatch", image: "/SmartWatch.jpg" },
   { Category: "Neckband", image: "/HeadPhone.jpg" },
+  { Category: "SmartRing", image: "/SmartRing.webp" },
+  { Category: "Soundbars", image: "/SoundBar.avif" },
 ];
 
-export async function ShopCategory() {
+export async function AllShopCategory() {
   return (
     <div>
       <div
         className={`${anton.className} flex justify-center text-4xl md:text-6xl mt-7 md:mt-16`}>
-        Explore Bestsellers
+        Shop by Categories
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-5 mt-10 gap-4 ">
+      <div className="grid grid-cols-2 md:grid-cols-7 mt-10 gap-4 ">
         {category.map((e) => {
           return (
             <div key={e.label}>
@@ -35,7 +37,7 @@ export async function ShopCategory() {
                     width={500}
                     height={500}
                     alt={`image of ${e.Category}`}
-                    className="rounded-xl  h-[254px] w-[304px] hover:scale-110 transition-all ease-in"
+                    className="rounded-xl  h-[154px] w-[204px] hover:scale-110 transition-all ease-in"
                   />
                 </div>
                 <p className="flex justify-center mt-5 text-lg">{e.Category}</p>

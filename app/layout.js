@@ -4,6 +4,7 @@ import NextAuthProvider from "./components/NextAuthProvider";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Head from "./head";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           <NextAuthProvider>
             <Header />
             {children}
+            {/* <Footer /> */}
           </NextAuthProvider>
         </Providers>
       </body>

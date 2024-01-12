@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
@@ -24,11 +24,11 @@ let value = [
 const Cards = ({ id, name, img, Price, Category, description }) => {
   return (
     <Container>
-      <div className="">
+      <div className="border-2  w-[17rem] md:w-[20rem] rounded-lg p-5 mt-10">
         <Link
           href="/collection/[category]/[id]"
           as={`/collection/${Category}/${id}`}>
-          <div className="border-2   w-[17rem] md:w-[20rem] rounded-lg mt-10 p-5">
+          <div className=" ">
             <div className="flex justify-center">
               <Image
                 src={img}
@@ -39,6 +39,7 @@ const Cards = ({ id, name, img, Price, Category, description }) => {
                 className="flex justify-center bg-stone-100 rounded-t-lg   h-[15rem] w-[18rem] p-20"
               />
             </div>
+
             <p
               className={`${MONTSERRAT_price.className} flex justify-center rounded-b-lg py-2 font-bold bg-yellow-300`}>
               60hrs playback
@@ -48,7 +49,7 @@ const Cards = ({ id, name, img, Price, Category, description }) => {
               {name}
             </p>
             <p
-              className={`${MONTSERRAT_price.className} font-bold text-2xl mt-2  `}>
+              className={`${MONTSERRAT_price.className} flex justify-between font-bold text-2xl mt-2  `}>
               ${Price}
             </p>
 

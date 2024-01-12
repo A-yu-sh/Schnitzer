@@ -8,6 +8,7 @@ import TwoColumnSection from "./components/TwoColumnSection";
 import StaticCards from "./components/StaticCards";
 import TrendingComponent from "./components/TrendingComponent";
 import { Suspense } from "react";
+import { AllShopCategory } from "./components/AllShopCategory";
 
 // import TrendingData from "./components/TrendingCards";
 // import TrendingComponent from "./TrendingComponents/TrendingComponent";
@@ -94,6 +95,7 @@ export default async function Home() {
             <TrendingComponent />
           </Suspense>
         </div>
+        <AllShopCategory />
         <StaticCards
           Heading=" Schnitzer: Elevate Your Tech Lifestyle "
           Paragraph="Discover a symphony of innovation at Schnitzer, your go-to destination for cutting-edge earphones, stylish smartwatches, and powerful speakers. Unleash the power of sound and stay connected with our premium audio and tech accessories. Elevate your everyday experiences with Schnitzer's curated collection of must-have gadgets"
