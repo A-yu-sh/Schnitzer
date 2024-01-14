@@ -32,8 +32,8 @@ const Cards = ({ id, name, img, Price, Category, description, catchline }) => {
             <div className="flex justify-center">
               <Image
                 src={img}
-                width={150}
-                height={150}
+                width={1050}
+                height={1050}
                 priority={true}
                 alt={`image of ${name}`}
                 className="flex justify-center bg-stone-100 rounded-t-lg   h-[15rem] w-[18rem] p-20"
@@ -42,7 +42,7 @@ const Cards = ({ id, name, img, Price, Category, description, catchline }) => {
 
             <p
               className={`${MONTSERRAT_price.className} flex justify-center rounded-b-lg py-2 font-bold bg-yellow-300`}>
-              {catchline || "60hrs playback"}
+              {"AMOLED Display" || "60hrs playback" || "ENXM Technology"}
             </p>
 
             <p className={`${MONTSERRAT.className} font-bold text-xl mt-2  `}>

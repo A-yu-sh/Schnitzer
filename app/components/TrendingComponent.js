@@ -19,7 +19,7 @@ const TrendingComponent = async () => {
         Our Trending Products
       </div>
       <Link
-        href="#"
+        href="/trending"
         className="flex justify-center md:justify-end mt-5 md:mt-0 text-md mb-1 text-yellow-500 font-semibold">
         View All{" "}
         <span className="mt-1 ml-1">
