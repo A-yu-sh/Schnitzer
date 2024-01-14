@@ -57,6 +57,7 @@ const page = async ({ searchParams }) => {
                   Category={e.category}
                   name={e.name}
                   img={e.image}
+                  catchline={e.catchline}
                   Price={e.price}
                 />
               </div>

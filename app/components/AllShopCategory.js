@@ -8,13 +8,18 @@ const anton = Anton({
 });
 
 let category = [
-  { Category: "Earbuds", image: "/Earbud.jpg", link: "/[category]" },
-  { Category: "Speakers", image: "/Speaker.jpg" },
-  { Category: "Wireless", image: "/Neckband.webp" },
-  { Category: "SmartWatch", image: "/SmartWatch.jpg" },
-  { Category: "Neckband", image: "/HeadPhone.jpg" },
-  { Category: "SmartRing", image: "/SmartRing.webp" },
-  { Category: "Soundbars", image: "/SoundBar.avif" },
+  {
+    label: "earbuds",
+    Category: "Earbuds",
+    image: "/Earbud.jpg",
+    link: "/[category]",
+  },
+  { label: "speakers", Category: "Speakers", image: "/Speaker.jpg" },
+  { label: "neckband", Category: "Neckband", image: "/Neckband.webp" },
+  { label: "smartwatch", Category: "Smartwatch", image: "/SmartWatch.jpg" },
+  { label: "headphone", Category: "Headphone", image: "/HeadPhone.jpg" },
+  { label: "smartRing", Category: "Ring", image: "/SmartRing.webp" },
+  { label: "soundbar", Category: "Soundbar", image: "/SoundBar.avif" },
 ];
 
 export async function AllShopCategory() {

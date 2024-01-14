@@ -21,7 +21,7 @@ let value = [
   { label: "IWP Technology" },
 ];
 
-const Cards = ({ id, name, img, Price, Category, description }) => {
+const Cards = ({ id, name, img, Price, Category, description, catchline }) => {
   return (
     <Container>
       <div className="border-2  w-[17rem] md:w-[20rem] rounded-lg p-5 mt-10">
@@ -42,7 +42,7 @@ const Cards = ({ id, name, img, Price, Category, description }) => {
 
             <p
               className={`${MONTSERRAT_price.className} flex justify-center rounded-b-lg py-2 font-bold bg-yellow-300`}>
-              60hrs playback
+              {catchline || "60hrs playback"}
             </p>
 
             <p className={`${MONTSERRAT.className} font-bold text-xl mt-2  `}>

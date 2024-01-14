@@ -10,9 +10,9 @@ const anton = Anton({
 let category = [
   { Category: "Earbuds", image: "/Earbud.jpg", link: "/[category]" },
   { Category: "Speakers", image: "/Speaker.jpg" },
-  { Category: "Wireless", image: "/Neckband.webp" },
-  { Category: "SmartWatch", image: "/SmartWatch.jpg" },
-  { Category: "Neckband", image: "/HeadPhone.jpg" },
+  { Category: "Neckband", image: "/Neckband.webp" },
+  { Category: "Smartwatch", image: "/SmartWatch.jpg" },
+  { Category: "Headphone", image: "/HeadPhone.jpg" },
 ];
 
 export async function ShopCategory() {
