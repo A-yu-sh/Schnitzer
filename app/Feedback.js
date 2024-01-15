@@ -26,7 +26,7 @@ const Feedback = () => {
   return (
     <div>
       <div className="flex justify-center mt-20 text-5xl">Customer Say!</div>
-      <div className="flex mt-5 justify-center text-sm md:text-lg">
+      <div className="flex mt-5 justify-center text-center text-sm md:text-lg">
         Customers love our products and we always strive to please them all.
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
