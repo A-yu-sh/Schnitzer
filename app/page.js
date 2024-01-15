@@ -96,12 +96,12 @@ export default async function Home() {
           </Suspense>
         </div>
         <AllShopCategory />
-        <StaticCards
+        {/* <StaticCards
           Heading=" Schnitzer: Elevate Your Tech Lifestyle "
           Paragraph="Discover a symphony of innovation at Schnitzer, your go-to destination for cutting-edge earphones, stylish smartwatches, and powerful speakers. Unleash the power of sound and stay connected with our premium audio and tech accessories. Elevate your everyday experiences with Schnitzer's curated collection of must-have gadgets"
           Images="/Speaker_Category.jpg"
           Position="left"
-        />{" "}
+        />{" "} */}
         <div className="hidden md:block">
           <StaticCards
             Heading="Schnitzer: Your Gateway to Premium Tech"

@@ -48,19 +48,3 @@ export const CheckOutOrder = async (req, res, order) => {
     throw error;
   }
 };
-
-export const createOrder = async (order) => {
-  try {
-    await CONNECT_MONGO_DB();
-
-    const newOrder = await Order.create({
-      ...order,
-      event: order.eventId,
-      buyer: order.buyerId,
-    });
-
-    return JSON.parse(JSON.stringify(newOrder));
-  } catch (error) {
-    handleError(error);
-  }
-};
