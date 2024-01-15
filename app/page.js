@@ -9,6 +9,7 @@ import StaticCards from "./components/StaticCards";
 import TrendingComponent from "./components/TrendingComponent";
 import { Suspense } from "react";
 import { AllShopCategory } from "./components/AllShopCategory";
+import Feedback from "./Feedback";
 
 // import TrendingData from "./components/TrendingCards";
 // import TrendingComponent from "./TrendingComponents/TrendingComponent";
@@ -96,26 +97,27 @@ export default async function Home() {
           </Suspense>
         </div>
         <AllShopCategory />
-        {/* <StaticCards
+        <StaticCards
           Heading=" Schnitzer: Elevate Your Tech Lifestyle "
           Paragraph="Discover a symphony of innovation at Schnitzer, your go-to destination for cutting-edge earphones, stylish smartwatches, and powerful speakers. Unleash the power of sound and stay connected with our premium audio and tech accessories. Elevate your everyday experiences with Schnitzer's curated collection of must-have gadgets"
           Images="/Speaker_Category.jpg"
           Position="left"
-        />{" "} */}
-        <div className="hidden md:block">
+        />{" "}
+        {/* <div className="hidden md:block">
           <StaticCards
             Heading="Schnitzer: Your Gateway to Premium Tech"
             Paragraph="Explore the future of audio and smart technology with Schnitzer. Immerse yourself in our curated collection of top-tier earphones, cutting-edge smartwatches, and powerful speakers. Elevate your lifestyle with the perfect blend of style and innovation. Schnitzer - where excellence meets technology."
             Images="/Smartwatch_Category.jpg"
             Position="right"
           />
-        </div>
-        <StaticCards
+        </div> */}
+        {/* <StaticCards
           Heading=" Sonic Fusion of Tech and Style "
           Paragraph="Discover the perfect harmony of innovation and elegance at Schnitzer. Dive into a world of crystal-clear sound with our top-tier earphones, stay connected with cutting-edge smartwatches, and amplify your space with our sleek speakers. Elevate every moment – Schnitzer, where technology meets sophistication."
           Images="/SonicTech.jpg"
           Position="left"
-        />
+        /> */}
+        <Feedback />
       </Container>
     </main>
   );
