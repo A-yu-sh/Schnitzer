@@ -5,6 +5,7 @@ import Cards from "../components/Cards";
 import Search from "./Search";
 import { GET_DATA_BY_QUERY } from "../api/Operations/route";
 import { data } from "autoprefixer";
+import SortingButtons from "./SortingButtons";
 
 export const metadata = {
   title: "Schnitzer | Collection",
@@ -40,30 +41,34 @@ const page = async ({ searchParams }) => {
 
   return (
     <Container>
-      <div>
-        <div
-          className={`${anton.className} mt-52 flex justify-center  text-4xl md:text-7xl`}>
-          OUR COLLECTION
-        </div>
+      <Container>
+        <div>
+          <div
+            className={`${anton.className} mt-52 flex justify-center  text-4xl md:text-7xl`}>
+            OUR COLLECTION
+          </div>
 
-        <Search />
+          <Search />
+          {/* <SortingButtons /> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
-          {product.map((e) => {
-            return (
-              <div key={e._id} className="flex justify-center">
-                <Cards
-                  id={e._id}
-                  Category={e.category}
-                  name={e.name}
-                  img={e.image}
-                  Price={e.price}
-                />
-              </div>
-            );
-          })}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
+            {product.map((e) => {
+              return (
+                <div key={e._id} className="flex justify-center">
+                  <Cards
+                    id={e._id}
+                    Category={e.category}
+                    name={e.name}
+                    img={e.image}
+                    Price={e.price}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          {/* <button onClick={() => window.scrollTo(0, 0)}>Top</button> */}
         </div>
-      </div>
+      </Container>
     </Container>
   );
 };

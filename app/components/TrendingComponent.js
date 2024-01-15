@@ -28,7 +28,7 @@ const TrendingComponent = async () => {
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-4  py-4">
         {Product.filter((e, idx) => {
-          return idx < 4;
+          return idx > 2 && idx < 7;
         }).map((e) => {
           return (
             <div className="flex justify-center">

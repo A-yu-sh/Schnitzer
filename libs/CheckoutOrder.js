@@ -2,6 +2,8 @@
 import Stripe from "stripe";
 import { redirect } from "next/navigation";
 import getRawBody from "raw-body";
+import { CONNECT_MONGO_DB } from "./ConnectMongoDB";
+import Order from "@/model/OrderModel";
 
 export const CheckOutOrder = async (req, res, order) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -44,5 +46,21 @@ export const CheckOutOrder = async (req, res, order) => {
     redirect(session.url);
   } catch (error) {
     throw error;
+  }
+};
+
+export const createOrder = async (order) => {
+  try {
+    await CONNECT_MONGO_DB();
+
+    const newOrder = await Order.create({
+      ...order,
+      event: order.eventId,
+      buyer: order.buyerId,
+    });
+
+    return JSON.parse(JSON.stringify(newOrder));
+  } catch (error) {
+    handleError(error);
   }
 };
