@@ -5,7 +5,12 @@ import UserMODEL from "@/model/UserModel";
 export async function POST(req, res) {
   const { authId, name, email, provider } = await req.json();
   await CONNECT_MONGO_DB();
-  await UserMODEL.create({ authId, name, email, provider });
+  await UserMODEL.create({
+    authId,
+    name,
+    email,
+    provider,
+  });
 
   return NextResponse.json({ message: "created" });
 }

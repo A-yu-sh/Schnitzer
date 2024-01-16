@@ -26,7 +26,7 @@ const TrendingComponent = async () => {
           <FaRegArrowAltCircleRight />
         </span>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-4  py-4">
+      <div className="grid grid-cols-2 md:grid-cols-4  py-4">
         {Product.filter((e, idx) => {
           return idx > 2 && idx < 7;
         }).map((e) => {

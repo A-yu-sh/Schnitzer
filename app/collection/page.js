@@ -66,7 +66,6 @@ const page = async ({ searchParams }) => {
               );
             })}
           </div>
-          {/* <button onClick={() => window.scrollTo(0, 0)}>Top</button> */}
         </div>
       </Container>
     </Container>

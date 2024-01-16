@@ -2,6 +2,7 @@
 import { useSession, getSession } from "next-auth/react";
 import { Dosis } from "next/font/google";
 import Container from "../components/Container";
+import { useState } from "react";
 
 const dosis = Dosis({
   weight: "600",
@@ -10,6 +11,7 @@ const dosis = Dosis({
 
 export default function Page() {
   const { data: session, status } = useSession();
+
   let name;
   console.log(status);
 
@@ -31,7 +33,7 @@ export default function Page() {
     <div>
       <Container>
         <div className="flex justify-center md:justify-start font-bold text-4xl mt-24">
-          <h1 className={`${dosis.className}`}>Welcome! </h1>
+          <h1 className={`${dosis.className}`}>My Profile </h1>
         </div>
       </Container>
     </div>
