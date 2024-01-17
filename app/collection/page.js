@@ -26,15 +26,6 @@ const page = async ({ searchParams }) => {
 
   const FETCHER = async () => {
     const value = query;
-    //   const sortValue = sortBy.toString();
-
-    //   if(sortValue == 'Ascending'){
-    //   const res = await fetch(`${process.env.URL_VALUE}/api/Database`, {
-    //     cache: "no-store",
-    //   });
-    //   const data = await res.json();
-
-    // }
 
     if (value) {
       const data = await GET_DATA_BY_QUERY(value);

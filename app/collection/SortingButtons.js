@@ -3,6 +3,13 @@ import React from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
+const label = [
+  { label: "Sort By", slug: "Sort By", disabled: true },
+  { label: "Relevance", slug: "Relevance", disabled: false },
+  { label: "Price: Low to High", slug: "Ascending", disabled: false },
+  { label: "Price: High to Low", slug: "Descending", disabled: false },
+];
+
 const SortingButtons = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -26,12 +33,13 @@ const SortingButtons = () => {
           <select
             onChange={(e) => UpdateQueryParameter(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-1/7 mr-5 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
-            <option selected disabled>
-              Sort by
-            </option>
-            <option>Relevance</option>
-            <option>Ascending</option>
-            <option>Descending</option>
+            {label.map((e) => {
+              return (
+                <option key={e.slug} value={e.slug} disabled={e.disabled}>
+                  {e.label}
+                </option>
+              );
+            })}
           </select>
         </label>
       </div>
@@ -40,3 +48,12 @@ const SortingButtons = () => {
 };
 
 export default SortingButtons;
+
+{
+  /* <option selected disabled>
+              Sort by
+            </option>
+            <option>Relevance</option>
+            <option>Ascending</option>
+            <option>Descending</option> */
+}
