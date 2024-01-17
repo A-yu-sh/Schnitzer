@@ -3,7 +3,6 @@ import Stripe from "stripe";
 import { redirect } from "next/navigation";
 import getRawBody from "raw-body";
 import { CONNECT_MONGO_DB } from "./ConnectMongoDB";
-import Order from "@/model/OrderModel";
 
 export const CheckOutOrder = async (req, res, order) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
