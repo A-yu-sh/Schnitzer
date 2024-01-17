@@ -30,7 +30,7 @@ const SortingButtons = () => {
     } else {
       params.delete("sort_By");
     }
-    replace(`${pathname}&?${params.toString()}`);
+    // replace(`${pathname}&?${params.toString()}`);
   };
 
   return (
