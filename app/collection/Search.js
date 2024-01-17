@@ -21,7 +21,7 @@ const Search = () => {
   return (
     <div className="flex justify-center">
       <input
-        className="flex justify-center mt-20 w-1/2 rounded-xl border border-gray-300 bg-slate-100 0 py-[12px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+        className="flex justify-center mt-20 w-full md:w-1/2 rounded-xl border border-gray-300 bg-slate-100 0 py-[12px] pl-10 text-sm outline-2 placeholder:text-gray-500"
         placeholder="Search By Category"
         onChange={(e) => HandleSearch(e.target.value)}
         defaultValue={searchParams.get("query")?.toString()}

@@ -3,7 +3,7 @@ import Container from "../components/Container";
 import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
 import Search from "./Search";
-import { GET_DATA_BY_QUERY } from "../api/Operations/route";
+import { GET_DATA_BY_QUERY, GET_TRENDING_DATA } from "../api/Operations/route";
 import { data } from "autoprefixer";
 import SortingButtons from "./SortingButtons";
 
@@ -22,10 +22,20 @@ const anton = Anton({
 
 const page = async ({ searchParams }) => {
   const query = searchParams.query || "";
-  const sortBy = searchParams.sort_By || "";
+  const sortBy = searchParams.Sort_By || "";
 
   const FETCHER = async () => {
     const value = query;
+    //   const sortValue = sortBy.toString();
+
+    //   if(sortValue == 'Ascending'){
+    //   const res = await fetch(`${process.env.URL_VALUE}/api/Database`, {
+    //     cache: "no-store",
+    //   });
+    //   const data = await res.json();
+
+    // }
+
     if (value) {
       const data = await GET_DATA_BY_QUERY(value);
       return data;
@@ -39,6 +49,20 @@ const page = async ({ searchParams }) => {
   };
 
   const product = await FETCHER();
+  const allProduct = [...product];
+
+  // console.log(allProduct);
+
+  if (sortBy === "Relevance") {
+    allProduct.sort((p1, p2) => p1.price == p2.price);
+  }
+
+  if (sortBy === "Ascending") {
+    allProduct.sort((p1, p2) => p1.price - p2.price);
+  }
+  if (sortBy === "Descending") {
+    allProduct.sort((p1, p2) => p2.price - p1.price);
+  }
 
   return (
     <Container>
@@ -46,14 +70,14 @@ const page = async ({ searchParams }) => {
         <div>
           <div
             className={`${anton.className} mt-52 flex justify-center  text-4xl md:text-7xl`}>
-            OUR COLLECTION {sortBy}
+            OUR COLLECTION
           </div>
 
           <Search />
           <SortingButtons />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
-            {product.map((e) => {
+            {allProduct.map((e) => {
               return (
                 <div key={e._id} className="flex justify-center">
                   <Cards
