@@ -24,7 +24,7 @@ let value = [
 const Cards = ({ id, name, img, Price, Category, description, catchline }) => {
   return (
     // <Container>
-    <div className="border-2  w-[37rem] md:w-[20rem] rounded-lg p-5 mt-10">
+    <div className="border-2  w-full md:w-[20rem] rounded-lg p-5 mt-10">
       <Link
         href="/collection/[category]/[id]"
         as={`/collection/${Category}/${id}`}>

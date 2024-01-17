@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 gap-2 border-t border-primary/10 pt-8">
+    <footer className="mt-20 gap-2 border-t  border-primary/10 pt-8">
       <div className="container flex flex-wrap items-center justify-center px-4 py-8 mx-auto  lg:justify-between">
         <div className="flex flex-wrap justify-center">
           <ul className="flex items-center space-x-4">
@@ -31,8 +31,10 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="mt-10 gap-2 border-t border-primary/10 pt-8 pb-2">
-        <p className="text-center text-sm">@2024 All rights reserved.</p>
+      <div className="mt-10 gap-2 bg-black border-t border-primary/10 pt-8 pb-2">
+        <p className="text-center text-white text-sm">
+          @2024 All rights reserved.
+        </p>
       </div>
     </footer>
   );
