@@ -30,21 +30,14 @@ const SortingButtons = () => {
     } else {
       params.delete("sort_By");
     }
-    replace(`${pathname}/?${params.toString()}`);
+    replace(`${pathname}&?${params.toString()}`);
   };
 
   return (
     <div>
       <div>
-        {sortingOrder.map((e) => {
-          return (
-            <div key={e.label}>
-              <button onClick={UpdateQueryParameter(e.label)}>
-                Price - {e.label}
-              </button>
-            </div>
-          );
-        })}
+        <button onClick={UpdateQueryParameter("Ascending")}>Ascending</button>
+        <button onClick={UpdateQueryParameter("Descending")}>Descending</button>
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ const anton = Anton({
 
 const page = async ({ searchParams }) => {
   const query = searchParams.query || "";
+  const sortBy = searchParams.sort_By || "";
 
   const FETCHER = async () => {
     const value = query;
@@ -45,7 +46,7 @@ const page = async ({ searchParams }) => {
         <div>
           <div
             className={`${anton.className} mt-52 flex justify-center  text-4xl md:text-7xl`}>
-            OUR COLLECTION
+            OUR COLLECTION {sortBy}
           </div>
 
           <Search />
