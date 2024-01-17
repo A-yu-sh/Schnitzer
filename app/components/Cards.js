@@ -50,7 +50,7 @@ const Cards = ({ id, name, img, Price, Category, description, catchline }) => {
             {name}
           </p>
           <p
-            className={`${MONTSERRAT_price.className} flex justify-between font-bold text-2xl mt-5 md:mt-2  `}>
+            className={`${MONTSERRAT_price.className} flex justify-between font-bold text-4xl md:text-2xl mt-5 md:mt-2  `}>
             ${Price}
           </p>
 
