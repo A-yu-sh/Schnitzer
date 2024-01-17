@@ -49,7 +49,7 @@ const page = async ({ searchParams }) => {
           </div>
 
           <Search />
-          {/* <SortingButtons /> */}
+          <SortingButtons />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
             {product.map((e) => {

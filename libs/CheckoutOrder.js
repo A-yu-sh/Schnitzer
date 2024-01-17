@@ -16,6 +16,7 @@ export const CheckOutOrder = async (req, res, order) => {
             unit_amount: e.price * 100,
             product_data: {
               name: e.name,
+              images: e.image,
             },
           },
           adjustable_quantity: {
