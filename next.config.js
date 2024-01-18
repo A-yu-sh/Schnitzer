@@ -8,6 +8,7 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "unsplash.com",
       "firebasestorage.googleapis.com",
+      "avatars.githubusercontent.com",
     ],
   },
 };
