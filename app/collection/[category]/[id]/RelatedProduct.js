@@ -16,7 +16,7 @@ const RelatedProduct = async ({ category, id }) => {
       <div className="flex justify-center mt-32">
         <h1 className={`${mukta.className} text-5xl `}>Related Product</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-4 mx-7">
         {data
           .filter((e, idx) => e._id != id && idx < 5)
           .map((e) => {
