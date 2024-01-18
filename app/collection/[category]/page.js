@@ -17,7 +17,7 @@ const page = async ({ params }) => {
     <div className="flex">
       <Container>
         <h1 className={`${anton.className} justify-center text-sm mt-32`}>
-          /collection/{category}
+          /collection/<span className="font-bold">{category}</span>
         </h1>
         <h1 className="text-xl">
           {category} - {data.length} items
