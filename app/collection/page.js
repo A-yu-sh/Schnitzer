@@ -3,8 +3,7 @@ import Container from "../components/Container";
 import { Anton } from "next/font/google";
 import Cards from "../components/Cards";
 import Search from "./Search";
-import { GET_DATA_BY_QUERY, GET_TRENDING_DATA } from "../api/Operations/route";
-import { data } from "autoprefixer";
+import { GET_DATA_BY_QUERY } from "../api/Operations/route";
 import SortingButtons from "./SortingButtons";
 
 export const metadata = {

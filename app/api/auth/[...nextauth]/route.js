@@ -2,6 +2,7 @@ import { CONNECT_MONGO_DB } from "@/libs/ConnectMongoDB";
 import UserMODEL from "@/model/UserModel";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import GithubProvider from "next-auth/providers/github";
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -10,7 +11,10 @@ export const authOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-    // ...add more providers here
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    }),
   ],
 
   secret: process.env.NEXTAUTH_SECRET,

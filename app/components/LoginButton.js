@@ -62,28 +62,12 @@ const LoginButton = () => {
   }
 
   return (
-    <div className=" ">
-      <button
-        onMouseOver={() => setOpen(!open)}
-        onMouseOut={() => setOpen(!open)}
-        className=" "></button>
-
-      <DropdownMenu>
-        <DropdownMenuTrigger className="px-7 py-2 rounded-lg mt-4 ml-7 md:ml-14 md:mt-6 text-white bg-black">
-          Login
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>Login</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            {" "}
-            <button className="flex" onClick={() => signIn("google")}>
-              <FcGoogle className="mt-[0.10rem]" />
-              <span className="ml-2">Google</span>
-            </button>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+    <div className=" mt-5 md:mt-7 ">
+      <Link
+        href="/login"
+        className="px-7 py-2 rounded-lg mt-2 ml-7 md:ml-14 md:mt-20 text-white bg-black">
+        Login
+      </Link>
     </div>
   );
 };
