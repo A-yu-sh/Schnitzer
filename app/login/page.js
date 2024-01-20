@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 const page = () => {
@@ -8,6 +9,7 @@ const page = () => {
   if (status === "authenticated") {
     localStorage.setItem("user-session", JSON.stringify(session.user));
   }
+
   return (
     <div>
       <div className="mt-32 font-bold text-xl flex justify-center">
@@ -36,7 +38,7 @@ const page = () => {
           <FcGoogle />
         </button>
         <button className="border" onClick={() => signIn("github")}>
-          <FcGoogle />
+          <FaGithub />
         </button>
       </div>
     </div>
