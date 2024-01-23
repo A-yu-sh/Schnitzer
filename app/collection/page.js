@@ -31,14 +31,14 @@ const page = async ({ searchParams }) => {
       return data;
     } else {
       const res = await fetch(`${process.env.URL_VALUE}/api/Database`, {
-        cache: "force-cache",
+        cache: "no-store",
       });
       const data = await res.json();
       return data;
     }
   };
 
-  const [product] = Promise.all(await FETCHER());
+  const product = await FETCHER();
   const allProduct = [...product];
 
   // console.log(allProduct);
