@@ -34,10 +34,10 @@ const page = () => {
       <div className=" text-xl flex justify-center">Or</div>
       <div className=" text-xl flex justify-center">Continue With</div>
       <div className="flex justify-center gap-4 mt-12 ">
-        <button className="border" onClick={() => signIn("google")}>
+        <button className="" onClick={() => signIn("google")}>
           <FcGoogle />
         </button>
-        <button className="border" onClick={() => signIn("github")}>
+        <button className="" onClick={() => signIn("github")}>
           <FaGithub />
         </button>
       </div>
