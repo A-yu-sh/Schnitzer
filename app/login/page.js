@@ -19,7 +19,7 @@ const page = () => {
         <div className="outline-1 outline-black flex justify-center  ">
           <input
             type="email"
-            placeholder="Enter Your Email"
+            placeholder="Enter Your Email id"
             className="border w-1/4 mt-5"
           />
         </div>
