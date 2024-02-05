@@ -30,7 +30,9 @@ const page = async ({ searchParams }) => {
       const data = await GET_DATA_BY_QUERY(value);
       return data;
     } else {
-      const res = await fetch(`${process.env.URL_VALUE}/api/Database`);
+      const res = await fetch(`${process.env.URL_VALUE}/api/Database`, {
+        cache: "force-cache",
+      });
       const data = await res.json();
       return data;
     }
