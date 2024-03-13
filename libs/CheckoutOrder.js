@@ -42,7 +42,7 @@ export const CheckOutOrder = async (req, res, order) => {
       cancel_url: `${process.env.URL_VALUE}/collection`,
     };
     const session = await stripe.checkout.sessions.create(stripeOptions);
-
+    // return session;
     redirect(session.url);
   } catch (error) {
     throw error;

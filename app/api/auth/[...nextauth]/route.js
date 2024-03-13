@@ -5,7 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 
 export const authOptions = {
-  // Configure one or more authentication providers
+  // Configuring Google and Github Provider with Client Id and Secret
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -17,8 +17,10 @@ export const authOptions = {
     }),
   ],
 
+  // The Next auth secret is used during production
   secret: process.env.NEXTAUTH_SECRET,
 
+  // Upon User Login The data is added to the database using the given code
   callbacks: {
     async signIn({ user, account }) {
       if (account.provider === "google" || account.provider === "github") {

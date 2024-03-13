@@ -2,12 +2,14 @@ import { CONNECT_MONGO_DB } from "@/libs/ConnectMongoDB";
 import PRODUCT_MODEL from "@/model/ProductModel";
 import UserMODEL from "@/model/UserModel";
 
+// The GET_TRENDING_DATA() fetches the data that are marked as Trending = true
 export async function GET_TRENDING_DATA() {
   await CONNECT_MONGO_DB();
   const res = PRODUCT_MODEL.aggregate([{ $match: { istrending: "True" } }]);
   return res;
 }
 
+// The GET_NEW_LAUNCH_DATA() fetches the data that are marked as NewLaunch = true
 export async function GET_NEW_LAUNCH_DATA() {
   await CONNECT_MONGO_DB();
   const res = await PRODUCT_MODEL.aggregate([
@@ -16,20 +18,14 @@ export async function GET_NEW_LAUNCH_DATA() {
   return res;
 }
 
+// The GET_DATA_BY_ID(id) fetches the data with the id parameter id from the database
 export async function GET_DATA_BY_ID(id) {
   await CONNECT_MONGO_DB();
-  // const Cache_Product_By_Id = await CLI.get(`Key : ${id}`);
-  // if (Cache_Product_By_Id) {
-  // const Product = JSON.parse(Cache_Product_By_Id);
-  // return Product;
-  // } else {
   const res = await PRODUCT_MODEL.findById(id);
-  // await CLI.set(`Key : ${id}`, JSON.stringify(res));
-  // CLI.expire(`Key : ${id}`, 600);
   return res;
-  // }
 }
 
+// The GET_DATA_BY_CATEGORY() fetches the data with the category parameter from the database
 export const GET_DATA_BY_CATEGORY = async (Category) => {
   await CONNECT_MONGO_DB();
   const res = PRODUCT_MODEL.aggregate([
@@ -38,6 +34,7 @@ export const GET_DATA_BY_CATEGORY = async (Category) => {
   return res;
 };
 
+// The GET_USER fetches the user data
 export const GET_USER = async (id) => {
   await CONNECT_MONGO_DB();
   const res = UserMODEL.aggregate([{ $match: { _id: `${id}` } }]);
