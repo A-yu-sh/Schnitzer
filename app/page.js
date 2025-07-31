@@ -11,9 +11,6 @@ import { Suspense } from "react";
 import { AllShopCategory } from "./components/AllShopCategory";
 import Feedback from "./Feedback";
 
-// import TrendingData from "./components/TrendingCards";
-// import TrendingComponent from "./TrendingComponents/TrendingComponent";
-
 const dosis = Dosis({
   weight: "500",
   subsets: ["latin"],
@@ -40,6 +37,15 @@ export default async function Home() {
         alt="The Hero Image"
         className="h-[80vh] rounded-b-3xl md:h-[100vh] w-[300vh] mt-2 md:mt-8"
       />
+      <svg
+        className="relative mt-96 block w-[calc(100%+1.3px)] h-[150px]"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none">
+        <path
+          d="M0,0C150,100,350,100,500,50C650,0,850,0,1000,50C1150,100,1350,100,1500,50L1500,120L0,120Z"
+          className="fill-current mt-96 text-white"></path>
+      </svg>
       <div className="relative">
         <h1
           className={`${anton.className} absolute bottom-52 md:bottom-64 ml-[18%] md:ml-[30%] max-w-[30ch] leading-[3.2rem] md:leading-none md:max-w-[23ch] text-[2.1rem] md:text-[4.2rem] font-bold text-gray-200 `}>

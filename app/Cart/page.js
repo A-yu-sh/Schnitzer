@@ -67,6 +67,7 @@ const page = () => {
       <div>
         <div className="flex justify-center text-4xl mt-10 font-bold">
           <h1>SHOPPING CART</h1>
+          {console.log(Cart)}
           <hr />
         </div>
         {Cart.length > 0 ? (

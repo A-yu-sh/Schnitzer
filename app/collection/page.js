@@ -31,7 +31,7 @@ const page = async ({ searchParams }) => {
       return data;
     } else {
       const res = await fetch(`${process.env.URL_VALUE}/api/Database`, {
-        cache: "force-cache",
+        // cache: "force-cache",
       });
       const data = await res.json();
       return data;

@@ -8,11 +8,11 @@ const anton = Anton({
 });
 
 let category = [
-  { Category: "Earbuds", image: "/Earbud.jpg", link: "/[category]" },
-  { Category: "Speakers", image: "/Speaker.jpg" },
-  { Category: "Neckband", image: "/Neckband.webp" },
-  { Category: "Smartwatch", image: "/SmartWatch.jpg" },
-  { Category: "Headphone", image: "/HeadPhone.jpg" },
+  { id: 1, Category: "Earbuds", image: "/Earbud.jpg", link: "/[category]" },
+  { id: 2, Category: "Speakers", image: "/Speaker.jpg" },
+  { id: 3, Category: "Neckband", image: "/Neckband.webp" },
+  { id: 4, Category: "Smartwatch", image: "/SmartWatch.jpg" },
+  { id: 5, Category: "Headphone", image: "/HeadPhone.jpg" },
 ];
 
 export async function ShopCategory() {
@@ -25,7 +25,7 @@ export async function ShopCategory() {
       <div className="grid grid-cols-2 md:grid-cols-5 mt-10 gap-4 ">
         {category.map((e) => {
           return (
-            <div key={e.label}>
+            <div key={e.id}>
               <Link
                 href={`/collection/${e.link}`}
                 as={`/collection/${e.Category}`}>

@@ -5,28 +5,29 @@ import getRawBody from "raw-body";
 import { CONNECT_MONGO_DB } from "./ConnectMongoDB";
 
 export const CheckOutOrder = async (req, res, order) => {
+  const { price } = req;
+  console.log(price);
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  const bucketItems = req.map((item) => ({
+    // description: item.description,
+    quantity: 1,
+    price_data: {
+      currency: "USD",
+      unit_amount: item.price ? item.price * 100 : null,
+      product_data: {
+        name: item.name,
+        images: [item.image],
+      },
+    },
+  }));
   try {
     const stripeOptions = {
-      line_items: req.map((e) => {
-        return {
-          price_data: {
-            currency: "USD",
-            unit_amount: e.price * 100,
-            product_data: {
-              name: e.name,
-              images: e.image,
-            },
-          },
-          adjustable_quantity: {
-            enabled: true,
-            minimum: 1,
-          },
-          quantity: e.Quantity,
-        };
-      }),
+      submit_type: "pay",
       mode: "payment",
+      payment_method_types: ["card"],
+      line_items: [[{ bucketItems }]],
 
+      mode: "payment",
       shipping_options: [
         {
           shipping_rate: "shr_1OUCRCIHoiPPNwiXruf3KH7F",
@@ -34,7 +35,7 @@ export const CheckOutOrder = async (req, res, order) => {
           //   shipping_rate: "shr_1OU1rmSEH9bFsYJBLQqpkUtJ",
         },
       ],
-      submit_type: "pay",
+      // submit_type: "pay",
 
       billing_address_collection: "auto",
 
@@ -48,3 +49,23 @@ export const CheckOutOrder = async (req, res, order) => {
     throw error;
   }
 };
+
+// req.map((e) => {
+//   // console.log(e);
+//   ({
+//     price_data: {
+//       currency: "USD",
+//       unit_amount: e?.price * 100,
+//       // payment_method_types: "card",
+//       product_data: {
+//         name: e?.name,
+//         images: e?.image,
+//       },
+//     },
+//     adjustable_quantity: {
+//       enabled: true,
+//       minimum: 1,
+//     },
+//     quantity: e.Quantity,
+//   });
+// }),

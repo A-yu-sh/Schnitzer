@@ -12,7 +12,7 @@ const page = () => {
 
   return (
     <div>
-      <div className="mt-32 font-bold text-xl flex justify-center">
+      {/* <div className="mt-32 font-bold text-xl flex justify-center">
         Sign Up Or Log In
       </div>
       <form>
@@ -32,7 +32,10 @@ const page = () => {
         </div>
       </form>
       <div className=" text-xl flex justify-center">Or</div>
-      <div className=" text-xl flex justify-center">Continue With</div>
+      <div className=" text-xl flex justify-center">Continue With</div> */}
+      <div className="mt-56 text-xl flex justify-center">
+        Please Continue With
+      </div>
       <div className="flex justify-center gap-4 mt-12 ">
         <button className="" onClick={() => signIn("google")}>
           <FcGoogle />
