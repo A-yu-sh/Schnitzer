@@ -8,24 +8,31 @@ export const CheckOutOrder = async (req, res, order) => {
   const { price } = req;
   console.log(price);
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-  const bucketItems = req.map((item) => ({
-    // description: item.description,
-    quantity: 1,
-    price_data: {
-      currency: "USD",
-      unit_amount: item.price ? item.price * 100 : null,
-      product_data: {
-        name: item.name,
-        images: [item.image],
+  // In your CheckOutOrder function
+
+  const bucketItems = req.map((item) => {
+    // Assuming 'item._id' is the unique identifier for the product
+    const imageUrl = `${process.env.URL_VALUE}/api/images/${item._id}`;
+
+    return {
+      quantity: 1,
+      price_data: {
+        currency: "USD",
+        unit_amount: item.price ? item.price * 100 : 0,
+        product_data: {
+          name: item.name,
+          images: [imageUrl], // Use the short, new API URL here
+        },
       },
-    },
-  }));
+    };
+  });
+
   try {
     const stripeOptions = {
       submit_type: "pay",
       mode: "payment",
       payment_method_types: ["card"],
-      line_items: [[{ bucketItems }]],
+      line_items: bucketItems,
 
       mode: "payment",
       shipping_options: [
