@@ -1,6 +1,6 @@
 // app/api/images/[id]/route.js
 
-import { CONNECT_MONGO_DB } from "../../ConnectMongoDB"; // Adjust the path as needed
+import { CONNECT_MONGO_DB } from "@/libs/ConnectMongoDB"; // Adjust the path as needed
 import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb"; // If you're using MongoDB
 
